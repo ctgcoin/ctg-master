@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+# Copyright (c) 2017 Danny van Dyk
+#
+# This file is part of the ctg project. ctg is free software;
+# you can redistribute it and/or modify it under the terms of the GNU General
+# Public License version 2, as published by the Free Software Foundation.
+#
+# ctg is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+# details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+# Place, Suite 330, Boston, MA  02111-1307  USA
+
+from ctgdata import *
+from shutil import copy2
+
+def main():
+    parser = argparse.ArgumentParser(description='Prepare a directoy to be used as an $ctg_HOME directory')
+    parser.add_argument('ctghome', metavar='ctgHOME', type=str, help='Name of the directy that shall be prepared.')
+    parser.add_argument('--ctgdir', type=str, help='Root directory of the ctg installation. Defaults to /usr', default='/usr')
+
+    args = parser.parse_args()
+
+    # ensure that the ctg installation directory exists and is not empty
+    print(os.path.join(args.ctgdir, 'share/ctg/parameters'))
+    if not os.path.isdir(os.path.join(args.ctgdir, 'share/ctg/parameters')) or len(os.listdir(os.path.join(args.ctgdir, 'share/ctg/parameters'))) == 0:
+        error('\'{}\' is not a valid ctg installation directory'.format(args.ctgdir))
+
+    # ensure that the ctgHOME is empty
+    print(os.path.join(args.ctghome, 'parameters'))
+    if os.path.isdir(args.ctghome) and len(os.listdir(args.ctghome)) > 0:
+        error('\'{}\' is not an empty directory'.format(args.ctghome))
+    elif not os.path.exists(args.ctghome):
+        os.makedirs(args.ctghome)
+        os.makedirs(os.path.join(args.ctghome, 'parameters'))
+
+    # copy all .yaml files from ctgDIR/parameters/ to ctgHOME/
+    files = os.listdir(os.path.join(args.ctgdir, 'share/ctg/parameters'))
+    print('Copying the following files to the new ctg home')
+    for f in files:
+        print('  {}'.format(f))
+        copy2(os.path.join(args.ctgdir, 'share/ctg/parameters/', f), os.path.join(args.ctghome, 'parameters'))
+
+    exit(0);
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,3 @@
+FROM eoshep/build-essentials:xenial
+RUN mkdir -p /src /build
+ADD . /src
