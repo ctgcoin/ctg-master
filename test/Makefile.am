@@ -3,16 +3,16 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = -I$(top_srcdir) -std=c++0x -Wall -Wextra -pedantic
 
-noinst_LIBRARIES = libeostest.a
+noinst_LIBRARIES = libctgtest.a
 
-libeostest_a_SOURCES = \
+libctgtest_a_SOURCES = \
 	test.cc test.hh
 
 TESTS = \
 	test_TEST
-LDADD = libeostest.a \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/libeos.la
+LDADD = libctgtest.a \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 

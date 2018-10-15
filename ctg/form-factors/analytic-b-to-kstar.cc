@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2017 Danny van Dyk
+ * Copyright (c) 2017 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,16 +17,16 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/form-factors/analytic-b-to-kstar.hh>
-#include <eos/form-factors/b-lcdas.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/integrate.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/polylog.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/qcd.hh>
+#include <ctg/form-factors/analytic-b-to-kstar.hh>
+#include <ctg/form-factors/b-lcdas.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/polylog.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/qcd.hh>
 
 #include <functional>
 
@@ -34,7 +34,7 @@
 
 #include <iostream>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<AnalyticFormFactorBToKstarKMO2006>
@@ -737,7 +737,7 @@ namespace eos
         {
             const auto m_B2     = pow(m_B(), 2);
             const auto m_Kstar2 = std::pow(m_Kstar(), 2);
-            const auto lambda   = eos::lambda(m_B2, m_Kstar2, q2);
+            const auto lambda   = ctg::lambda(m_B2, m_Kstar2, q2);
 
             return (pow(m_B + m_Kstar, 2) * (m_B2 - m_Kstar2 - q2) * this->a_1(q2)
                 - lambda * this->a_2(q2)) / (16.0 * m_B * m_Kstar2 * (m_B + m_Kstar));
@@ -1334,7 +1334,7 @@ namespace eos
         {
             const auto m_B2     = pow(m_B(), 2);
             const auto m_Kstar2 = pow(m_Kstar(), 2);
-            const auto lambda   = eos::lambda(m_B2, m_Kstar2, q2);
+            const auto lambda   = ctg::lambda(m_B2, m_Kstar2, q2);
 
             return (m_B + m_Kstar) / (8.0 * m_B * m_Kstar2) * ((m_B2 + 3.0 * m_Kstar2 - q2) * this->t_2(q2) - lambda / (m_B2 - m_Kstar2) * this->t_3(q2));
         }

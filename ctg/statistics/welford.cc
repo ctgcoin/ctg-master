@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,11 +17,11 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/welford.hh>
+#include <ctg/statistics/welford.hh>
 
 #include <cmath>
 
-namespace eos
+namespace ctg
 {
     Welford::Welford() :
         new_mean(0),

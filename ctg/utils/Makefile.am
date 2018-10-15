@@ -7,8 +7,8 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeosutils.la
-libeosutils_la_SOURCES = \
+lib_LTLIBRARIES = libctgutils.la
+libctgutils_la_SOURCES = \
 	accumulator.cc accumulator.hh \
 	apply.hh \
 	cartesian-product.hh \
@@ -69,23 +69,23 @@ libeosutils_la_SOURCES = \
 	wilson_scan_model.cc wilson_scan_model.hh \
 	wrapped_forward_iterator.hh wrapped_forward_iterator-fwd.hh wrapped_forward_iterator-impl.hh
 
-libeosutils_la_LIBADD = \
+libctgutils_la_LIBADD = \
 	-lboost_filesystem -lboost_system \
 	-lgsl -lgslcblas -lm \
 	-lhdf5 -lhdf5_hl \
 	-lMinuit2 \
 	-lpthread \
 	-lyaml-cpp
-libeosutils_la_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
-libeosutils_la_LDFLAGS = $(AM_CXXFLAGS) $(HDF5_LDFLAGS) $(MINUIT2_LDFLAGS)
+libctgutils_la_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
+libctgutils_la_LDFLAGS = $(AM_CXXFLAGS) $(HDF5_LDFLAGS) $(MINUIT2_LDFLAGS)
 
 EXTRA_DIST = \
 	polylog_TEST_dilog.bin \
 	polylog_TEST_trilog.bin \
 	polylog_TEST_z.bin
 
-include_eos_utilsdir = $(includedir)/eos/utils
-include_eos_utils_HEADERS = \
+include_ctg_utilsdir = $(includedir)/ctg/utils
+include_ctg_utils_HEADERS = \
 	accumulator.hh \
 	apply.hh \
 	cartesian-product.hh \
@@ -139,7 +139,7 @@ include_eos_utils_HEADERS = \
 	wrapped_forward_iterator.hh wrapped_forward_iterator-fwd.hh wrapped_forward_iterator-impl.hh
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	apply_TEST \
@@ -177,9 +177,9 @@ TESTS = \
 	wilson_scan_model_TEST
 LDADD = \
 	-lyaml-cpp \
-	$(top_builddir)/test/libeostest.a \
-	libeosutils.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	libctgutils.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 

@@ -1,24 +1,24 @@
 MAINTAINERCLEANFILES = Makefile.in
 
-lib_LTLIBRARIES = libeosoptimize.la
-libeosoptimize_la_SOURCES = \
+lib_LTLIBRARIES = libctgoptimize.la
+libctgoptimize_la_SOURCES = \
 	optimizer.cc optimizer.hh \
 	optimizer-gsl.cc optimizer-gsl.hh
-libeosoptimize_la_CXXFLAGS = $(AM_CXXFLAGS)
-libeosoptimize_la_LIBADD =
+libctgoptimize_la_CXXFLAGS = $(AM_CXXFLAGS)
+libctgoptimize_la_LIBADD =
 
-include_eos_optimizedir = $(includedir)/eos/optimize
-include_eos_optimize_HEADERS = \
+include_ctg_optimizedir = $(includedir)/ctg/optimize
+include_ctg_optimize_HEADERS = \
 	optimizer.hh
 
 TESTS = \
 	optimizer-gsl_TEST
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	$(top_builddir)/eos/statistics/libeosstatistics.la \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	libeosoptimize.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	$(top_builddir)/ctg/statistics/libctgstatistics.la \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	libctgoptimize.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 

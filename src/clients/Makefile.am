@@ -15,75 +15,75 @@ libcli_a_SOURCES = \
 	cli_visitor.cc cli_visitor.hh
 
 bin_PROGRAMS = \
-	eos-evaluate \
-	eos-find-mode \
-	eos-list-constraints \
-	eos-list-observables \
-	eos-list-parameters \
-	eos-list-signal-pdfs \
-	eos-print-polynomial \
-	eos-propagate-uncertainty \
-	eos-sample-mcmc \
-	eos-sample-events-mcmc \
-	eos-scan-mc
+	ctg-evaluate \
+	ctg-find-mode \
+	ctg-list-constraints \
+	ctg-list-observables \
+	ctg-list-parameters \
+	ctg-list-signal-pdfs \
+	ctg-print-polynomial \
+	ctg-propagate-uncertainty \
+	ctg-sample-mcmc \
+	ctg-sample-events-mcmc \
+	ctg-scan-mc
 noinst_PROGRAMS = \
 	integrated \
 	observables
 
 LDADD = \
-	$(top_builddir)/eos/statistics/libeosstatistics.la \
-	$(top_builddir)/eos/optimize/libeosoptimize.la \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
-	$(top_builddir)/eos/b-decays/libeosbdecays.la \
-	$(top_builddir)/eos/rare-b-decays/libeosrarebdecays.la \
-	$(top_builddir)/eos/libeos.la \
+	$(top_builddir)/ctg/statistics/libctgstatistics.la \
+	$(top_builddir)/ctg/optimize/libctgoptimize.la \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
+	$(top_builddir)/ctg/b-decays/libctgbdecays.la \
+	$(top_builddir)/ctg/rare-b-decays/libctgrarebdecays.la \
+	$(top_builddir)/ctg/libctg.la \
 	libcli.a \
 	-lboost_filesystem -lboost_system \
 	-lMinuit2 \
 	-lyaml-cpp
 
-if EOS_ENABLE_PMC
+if ctg_ENABLE_PMC
 bin_PROGRAMS += \
-	eos-sample-pmc
+	ctg-sample-pmc
 
 LDADD += \
 	-lpmc -ldl
 
-eos_sample_pmc_SOURCES = eos-sample-pmc.cc
-eos_sample_pmc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
-eos_sample_pmc_LDADD = $(LDADD) $(HDF5_LDFLAGS) -lpmc -ldl
+ctg_sample_pmc_SOURCES = ctg-sample-pmc.cc
+ctg_sample_pmc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
+ctg_sample_pmc_LDADD = $(LDADD) $(HDF5_LDFLAGS) -lpmc -ldl
 endif
 
-eos_evaluate_SOURCES = eos-evaluate.cc
+ctg_evaluate_SOURCES = ctg-evaluate.cc
 
-eos_find_mode_SOURCES = eos-find-mode.cc
-eos_find_mode_CXXFLAGS = $(AM_CXXFLAGS) $(MINUIT2_CXXFLAGS)
-eos_find_mode_LDADD = $(LDADD) $(MINUIT2_LDFLAGS)
+ctg_find_mode_SOURCES = ctg-find-mode.cc
+ctg_find_mode_CXXFLAGS = $(AM_CXXFLAGS) $(MINUIT2_CXXFLAGS)
+ctg_find_mode_LDADD = $(LDADD) $(MINUIT2_LDFLAGS)
 
-eos_list_constraints_SOURCES = eos-list-constraints.cc
+ctg_list_constraints_SOURCES = ctg-list-constraints.cc
 
-eos_list_observables_SOURCES = eos-list-observables.cc
+ctg_list_observables_SOURCES = ctg-list-observables.cc
 
-eos_list_parameters_SOURCES = eos-list-parameters.cc
+ctg_list_parameters_SOURCES = ctg-list-parameters.cc
 
-eos_list_signal_pdfs_SOURCES = eos-list-signal-pdfs.cc
+ctg_list_signal_pdfs_SOURCES = ctg-list-signal-pdfs.cc
 
-eos_print_polynomial_SOURCES = eos-print-polynomial.cc
+ctg_print_polynomial_SOURCES = ctg-print-polynomial.cc
 
-eos_propagate_uncertainty_SOURCES = eos-propagate-uncertainty.cc
-eos_propagate_uncertainty_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
-eos_propagate_uncertainty_LDADD = $(LDADD) $(HDF5_LDFLAGS)
+ctg_propagate_uncertainty_SOURCES = ctg-propagate-uncertainty.cc
+ctg_propagate_uncertainty_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
+ctg_propagate_uncertainty_LDADD = $(LDADD) $(HDF5_LDFLAGS)
 
-eos_sample_mcmc_SOURCES = eos-sample-mcmc.cc
+ctg_sample_mcmc_SOURCES = ctg-sample-mcmc.cc
 
-eos_sample_events_mcmc_SOURCES = eos-sample-events-mcmc.cc
-eos_sample_events_mcmc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
-eos_sample_events_mcmc_LDADD = $(LDADD) $(HDF5_LDFLAGS)
+ctg_sample_events_mcmc_SOURCES = ctg-sample-events-mcmc.cc
+ctg_sample_events_mcmc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
+ctg_sample_events_mcmc_LDADD = $(LDADD) $(HDF5_LDFLAGS)
 
-eos_scan_mc_SOURCES = eos-scan-mc.cc
-eos_scan_mc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
-eos_scan_mc_LDADD = $(LDADD) $(HDF5_LDFLAGS) $(MINUIT2_LDFLAGS)
+ctg_scan_mc_SOURCES = ctg-scan-mc.cc
+ctg_scan_mc_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
+ctg_scan_mc_LDADD = $(LDADD) $(HDF5_LDFLAGS) $(MINUIT2_LDFLAGS)
 
 integrated_SOURCES = integrated.cc
 

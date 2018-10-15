@@ -1,15 +1,15 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011 Danny van Dyk
+ * Copyright (c) 2010, 2011 
  * Copyright (c) 2011 Christian Wacker
  * Copyright (c) 2018 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,17 +19,17 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_EOS_UTILS_INTEGRATE_IMPL_HH
-#define EOS_GUARD_EOS_UTILS_INTEGRATE_IMPL_HH 1
+#ifndef ctg_GUARD_ctg_UTILS_INTEGRATE_IMPL_HH
+#define ctg_GUARD_ctg_UTILS_INTEGRATE_IMPL_HH 1
 
-#include <eos/utils/integrate.hh>
-#include <eos/utils/integrate-cubature.hh>
-#include <eos/utils/matrix.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/integrate-cubature.hh>
+#include <ctg/utils/matrix.hh>
 
 #include <cassert>
 #include <vector>
 
-namespace eos
+namespace ctg
 {
     template <std::size_t k> std::array<double, k> integrate1D(const std::function<std::array<double, k> (const double &)> & f, unsigned n, const double & a, const double & b)
     {

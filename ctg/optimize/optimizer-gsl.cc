@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2015, 2016 Danny van Dyk
+ * Copyright (c) 2015, 2016 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,10 +17,10 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/optimize/optimizer-gsl.hh>
-#include <eos/utils/stringify.hh>
+#include <ctg/optimize/optimizer-gsl.hh>
+#include <ctg/utils/stringify.hh>
 
-namespace eos
+namespace ctg
 {
     OptimizerGSL::OptimizerGSL(const DensityPtr & density, const unsigned & max_iterations, const double & target_size) :
         _density(density),

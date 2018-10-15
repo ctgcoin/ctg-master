@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2015 Danny van Dyk
+ * Copyright (c) 2015 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,14 +17,14 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_EOS_OPTIMIZE_OPTIMIZER_MINUIT2_HH
-#define EOS_GUARD_EOS_OPTIMIZE_OPTIMIZER_MINUIT2_HH 1
+#ifndef ctg_GUARD_ctg_OPTIMIZE_OPTIMIZER_MINUIT2_HH
+#define ctg_GUARD_ctg_OPTIMIZE_OPTIMIZER_MINUIT2_HH 1
 
-#include <eos/optimize/optimizer.hh>
+#include <ctg/optimize/optimizer.hh>
 
 #include <gsl/gsl_multimin.h>
 
-namespace eos
+namespace ctg
 {
     class OptimizerGSL :
         public Optimizer

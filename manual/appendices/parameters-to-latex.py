@@ -53,7 +53,7 @@ def main():
         exit(-1)
 
     global references
-    with open('../../eos/references.yaml') as ref_file:
+    with open('../../ctg/references.yaml') as ref_file:
         try:
             references = yaml.load(ref_file)
         except yaml.YAMLERROR as e:

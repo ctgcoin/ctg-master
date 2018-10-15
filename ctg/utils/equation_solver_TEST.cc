@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,14 +17,14 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/equation_solver.hh>
-#include <eos/utils/log.hh>
+#include <ctg/utils/equation_solver.hh>
+#include <ctg/utils/log.hh>
 #include <test/test.hh>
 
 #include <gsl/gsl_sf_gamma.h>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class EquationSolverTest :
     public TestCase

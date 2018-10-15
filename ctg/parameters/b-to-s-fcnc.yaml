@@ -4,11 +4,11 @@
     'description': >
         The list of parameters describing the @MATH[b\to s \left\lbrace
         q\bar{q},\gamma,\ell^+\ell^-\right\rbrace]@ Wilson coefficients.
-        See the EOS manual for their physical definitions.
+        See the ctg manual for their physical definitions.
     'wcxf-relevant': true
 
 
-# Wilson coefficients C1 - C6 at mu = 4.2 GeV to NNLL accuary as calculated in the SM by EOS's StandardModel class.
+# Wilson coefficients C1 - C6 at mu = 4.2 GeV to NNLL accuary as calculated in the SM by ctg's StandardModel class.
 # For the calculations, cf. [BMU1999].
 "b->s::c1" :
     central: -0.29063621

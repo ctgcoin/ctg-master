@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2014, 2015 Danny van Dyk
+ * Copyright (c) 2014, 2015 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,22 +17,22 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/form-factors/analytic-b-to-pi.hh>
-#include <eos/form-factors/pi-lcdas.hh>
-#include <eos/utils/derivative.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/integrate.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/polylog.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/qcd.hh>
+#include <ctg/form-factors/analytic-b-to-pi.hh>
+#include <ctg/form-factors/pi-lcdas.hh>
+#include <ctg/utils/derivative.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/polylog.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/qcd.hh>
 
 #include <functional>
 
 #include <gsl/gsl_sf_gamma.h>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<AnalyticFormFactorBToPiDKMMO2008>

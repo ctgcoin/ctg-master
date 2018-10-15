@@ -1,18 +1,18 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2013-2016, 2018 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2013-2016, 2018 
  * Copyright (c) 2010, 2011 Christian Wacker
  * Copyright (c) 2015 Frederik Beaujean
  * Copyright (c) 2015 Christoph Bobeth
  * Copyright (c) 2018 Ahmet Kokulu
  * Copyright (c) 2018 Keri Vos
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -22,18 +22,18 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_RARE_B_DECAYS_FORM_FACTORS_IMPL_HH
-#define EOS_GUARD_SRC_RARE_B_DECAYS_FORM_FACTORS_IMPL_HH 1
+#ifndef ctg_GUARD_SRC_RARE_B_DECAYS_FORM_FACTORS_IMPL_HH
+#define ctg_GUARD_SRC_RARE_B_DECAYS_FORM_FACTORS_IMPL_HH 1
 
-#include <eos/form-factors/mesonic.hh>
-#include <eos/form-factors/analytic-b-to-pi.hh>
-#include <eos/utils/derivative.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/options.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/form-factors/mesonic.hh>
+#include <ctg/form-factors/analytic-b-to-pi.hh>
+#include <ctg/utils/derivative.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/options.hh>
+#include <ctg/utils/power_of.hh>
 #include <array>
 
-namespace eos
+namespace ctg
 {
     // Process    = B -> K^*, B -> D^*, B -> rho, B_s -> phi etc.
     // Transition = B -> V or B -> P
@@ -180,7 +180,7 @@ namespace eos
             {
                 const double mB = Process_::mB, mB2 = mB * mB;
                 const double mV = Process_::mV, mV2 = mV * mV;
-                const double lambda = eos::lambda(mB2, mV2, s);
+                const double lambda = ctg::lambda(mB2, mV2, s);
 
                 return ((mB + mV) * (mB + mV) * (mB2 - mV2 - s) * this->a_1(s)
                     - lambda * this->a_2(s)) / (16.0 * mB * mV2 * (mB + mV));
@@ -210,7 +210,7 @@ namespace eos
             {
                 const double mB = Process_::mB, mB2 = mB * mB;
                 const double mV = Process_::mV, mV2 = mV * mV;
-                const double lambda = eos::lambda(mB2, mV2, s);
+                const double lambda = ctg::lambda(mB2, mV2, s);
 
                 return ((mB2 - mV2) * (mB2 + 3.0 * mV2 - s) * this->t_2(s)
                         - lambda * this->t_3(s)) / (8.0 * mB * mV2 * (mB - mV));
@@ -285,7 +285,7 @@ namespace eos
             {
                 const double mB = BToKstar::mB, mB2 = mB * mB;
                 const double mV = BToKstar::mV, mV2 = mV * mV;
-                const double lambda = eos::lambda(mB2, mV2, s);
+                const double lambda = ctg::lambda(mB2, mV2, s);
 
                 return ((mB + mV) * (mB + mV) * (mB2 - mV2 - s) * this->a_1(s)
                     - lambda * this->a_2(s)) / (16.0 * mB * mV2 * (mB + mV));
@@ -310,7 +310,7 @@ namespace eos
             {
                 const double mB = BToKstar::mB, mB2 = mB * mB;
                 const double mV = BToKstar::mV, mV2 = mV * mV;
-                const double lambda = eos::lambda(mB2, mV2, s);
+                const double lambda = ctg::lambda(mB2, mV2, s);
 
                 return ((mB2 - mV2) * (mB2 + 3.0 * mV2 - s) * this->t_2(s)
                         - lambda * this->t_3(s)) / (8.0 * mB * mV2 * (mB - mV));
@@ -396,7 +396,7 @@ namespace eos
             {
                 const double mB = BToKstar::mB, mB2 = mB * mB;
                 const double mV = BToKstar::mV, mV2 = mV * mV;
-                const double lambda = eos::lambda(mB2, mV2, s);
+                const double lambda = ctg::lambda(mB2, mV2, s);
 
                 return ((mB + mV) * (mB + mV) * (mB2 - mV2 - s) * this->a_1(s)
                     - lambda * this->a_2(s)) / (16.0 * mB * mV2 * (mB + mV));
@@ -672,7 +672,7 @@ namespace eos
 
             virtual double a_2(const double & s) const
             {
-                const double lambda = eos::lambda(_mB2, _mV2, s);
+                const double lambda = ctg::lambda(_mB2, _mV2, s);
 
                 return (power_of<2>(_mB + _mV) * (_mB2 - _mV2 - s) * a_1(s)
                         - 16.0 * _mB * _mV2 * (_mB + _mV) * a_12(s)) / lambda;
@@ -710,7 +710,7 @@ namespace eos
 
             virtual double t_3(const double & s) const
             {
-                const double lambda = eos::lambda(_mB2, _mV2, s);
+                const double lambda = ctg::lambda(_mB2, _mV2, s);
 
                 return ((_mB2 - _mV2) * (_mB2 + 3.0 * _mV2 - s) * t_2(s)
                         - 8.0 * _mB * _mV2 * (_mB - _mV) * t_23(s)) / lambda;
@@ -1346,7 +1346,7 @@ namespace eos
                 static constexpr double mB  = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mP2 = Process_::mP2, mP22 = mP2 * mP2;
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double E2     = (mB2 + k2 - q2 - ctheta * std::sqrt(lambda)) / (4.0 * mB);
                 const double qhat2  = mB2 + mP22 - 2.0 * mB * E2;
 
@@ -1369,7 +1369,7 @@ namespace eos
                 static constexpr double mB    = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mBst2 = power_of<2>(Process_::mBst);
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double z  = this->_z(q2);
                 const double zh = this->_z(mBst2);
 
@@ -1389,7 +1389,7 @@ namespace eos
                 static constexpr double mB  = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mP2 = Process_::mP2, mP22 = mP2 * mP2;
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double E2     = (mB2 + k2 - q2 - ctheta * std::sqrt(lambda)) / (4.0 * mB);
                 const double qhat2  = mB2 + mP22 - 2.0 * mB * E2;
 
@@ -1431,7 +1431,7 @@ namespace eos
                 static constexpr double mB  = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mP2 = Process_::mP2, mP22 = mP2 * mP2;
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double E2     = (mB2 + k2 - q2 - ctheta * std::sqrt(lambda)) / (4.0 * mB);
                 const double qhat2  = mB2 + mP22 - 2.0 * mB * E2;
 
@@ -1454,7 +1454,7 @@ namespace eos
                 static constexpr double mB    = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mBst2 = power_of<2>(Process_::mBst);
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double z  = this->_z(q2);
                 const double zh = this->_z(mBst2);
 
@@ -1474,7 +1474,7 @@ namespace eos
                 static constexpr double mB  = Process_::mB,  mB2  = mB  * mB;
                 static constexpr double mP2 = Process_::mP2, mP22 = mP2 * mP2;
 
-                const double lambda = eos::lambda(q2, k2, mB2);
+                const double lambda = ctg::lambda(q2, k2, mB2);
                 const double E2     = (mB2 + k2 - q2 - ctheta * std::sqrt(lambda)) / (4.0 * mB);
                 const double qhat2  = mB2 + mP22 - 2.0 * mB * E2;
 

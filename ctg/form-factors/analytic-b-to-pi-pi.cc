@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2016, 2018 Danny van Dyk
+ * Copyright (c) 2016, 2018 
  * Copyright (c) 2018 Keri Vos
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,21 +18,21 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/form-factors/analytic-b-to-pi-pi.hh>
-#include <eos/form-factors/pi-lcdas.hh>
-#include <eos/utils/derivative.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/integrate.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/polylog.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/qcd.hh>
+#include <ctg/form-factors/analytic-b-to-pi-pi.hh>
+#include <ctg/form-factors/pi-lcdas.hh>
+#include <ctg/utils/derivative.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/polylog.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/qcd.hh>
 
 #include <functional>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<AnalyticFormFactorBToPiPiBFvD2016>
@@ -112,8 +112,8 @@ namespace eos
 
             auto imp = reinterpret_cast<const Implementation<AnalyticFormFactorBToPiPiBFvD2016> *>(_imp);
 
-            auto lambda = eos::lambda(q2, k2, imp->m_B() * imp->m_B());
-            auto lambda_pi = eos::lambda(q2, 0.135 * 0.135, imp->m_B() * imp->m_B());
+            auto lambda = ctg::lambda(q2, k2, imp->m_B() * imp->m_B());
+            auto lambda_pi = ctg::lambda(q2, 0.135 * 0.135, imp->m_B() * imp->m_B());
             if (lambda <= 0)
                 return 0.0;
 
@@ -155,7 +155,7 @@ namespace eos
 
         inline double R_int_denom_integrand(const double & q2)
         {
-            return eos::lambda(m_B() * m_B(), 0.135 * 0.135, q2) / pow(b_to_pi_ff->f_p(q2), 2);
+            return ctg::lambda(m_B() * m_B(), 0.135 * 0.135, q2) / pow(b_to_pi_ff->f_p(q2), 2);
         }
 
         inline double R_int_denom()
@@ -200,7 +200,7 @@ namespace eos
         inline double energy_1(const double & q2, const double & k2, const double & z) const
         {
             const double m_B = this->m_B(), m_B2 = m_B * m_B;
-            const double lambda = eos::lambda(m_B2, q2, k2);
+            const double lambda = ctg::lambda(m_B2, q2, k2);
             const double sqrt_lambda = std::sqrt(lambda);
 
             return (m_B2 + k2 - q2 + z * sqrt_lambda) / (4.0 * m_B);
@@ -619,7 +619,7 @@ namespace eos
 
         inline double lambda(const double & q2, const double & k2) const
         {
-            return eos::lambda(q2, k2, m_B() * m_B());
+            return ctg::lambda(q2, k2, m_B() * m_B());
         }
 
         inline double f_perp_im_res_qhat2(const double & q2, const double & k2) const

@@ -1,7 +1,7 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2007, 2008, 2010 Danny van Dyk <danny.dyk@uni-dortmund.de>
+ * Copyright (c) 2007, 2008, 2010  <>
  *
  * Based upon 'thread.cc' from Paludis, which is:
  *     Copyright (c) 2007 Ciaran McCreesh
@@ -20,19 +20,19 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/exception.hh>
-#include <eos/utils/instantiation_policy-impl.hh>
-#include <eos/utils/lock.hh>
-#include <eos/utils/mutex.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/thread.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/instantiation_policy-impl.hh>
+#include <ctg/utils/lock.hh>
+#include <ctg/utils/mutex.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/thread.hh>
 
 #include <cstring>
 #include <cerrno>
 
 #include <pthread.h>
 
-namespace eos
+namespace ctg
 {
     template <> struct Implementation<Thread>
     {

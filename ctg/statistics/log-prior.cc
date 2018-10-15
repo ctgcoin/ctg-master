@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,13 +17,13 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/log-prior.hh>
-#include <eos/utils/destringify.hh>
-#include <eos/utils/equation_solver.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/stringify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/utils/destringify.hh>
+#include <ctg/utils/equation_solver.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/stringify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <cmath>
 #include <limits>
@@ -36,7 +36,7 @@
 #include <gsl/gsl_sf_psi.h>
 #include <gsl/gsl_spline.h>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct WrappedForwardIteratorTraits<LogPrior::IteratorTag>
@@ -543,7 +543,7 @@ namespace eos
     LogPriorPtr
     LogPrior::Flat(const Parameters & parameters, const std::string & name, const ParameterRange & range)
     {
-        LogPriorPtr prior = std::make_shared<eos::priors::Flat>(parameters, name, range);
+        LogPriorPtr prior = std::make_shared<ctg::priors::Flat>(parameters, name, range);
 
         return prior;
     }
@@ -559,7 +559,7 @@ namespace eos
         if (upper <= central)
             throw InternalError("LogPrior::Gauss: upper value (" + stringify(upper) + ") <= central value (" + stringify(central) + ")");
 
-        LogPriorPtr prior = std::make_shared<eos::priors::Gauss>(parameters, name, range, lower, central, upper);
+        LogPriorPtr prior = std::make_shared<ctg::priors::Gauss>(parameters, name, range, lower, central, upper);
 
         return prior;
     }
@@ -575,7 +575,7 @@ namespace eos
         if (upper <= central)
             throw InternalError("LogPrior::LogGamma: upper value (" + stringify(upper) + ") <= central value (" + stringify(central) + ")");
 
-        LogPriorPtr prior = std::make_shared<eos::priors::LogGamma>(parameters, name, range, lower, central, upper);
+        LogPriorPtr prior = std::make_shared<ctg::priors::LogGamma>(parameters, name, range, lower, central, upper);
 
         return prior;
     }

@@ -1,15 +1,15 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 
  * Copyright (c) 2011 Christian Wacker
  * Copyright (c) 2018 Ahmet Kokulu
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,39 +19,39 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/observable.hh>
-#include <eos/form-factors/form-factor-adapter.hh>
-#include <eos/form-factors/analytic-b-to-pi-pi.hh>
-#include <eos/form-factors/b-lcdas.hh>
-#include <eos/form-factors/baryonic-impl.hh>
-#include <eos/form-factors/mesonic-impl.hh>
-#include <eos/form-factors/zero-recoil-sum-rule.hh>
-#include <eos/b-decays/b-to-l-nu.hh>
-#include <eos/b-decays/b-to-pi-l-nu.hh>
-#include <eos/b-decays/b-to-pi-pi-l-nu.hh>
-#include <eos/b-decays/b-to-d-l-nu.hh>
-#include <eos/b-decays/b-to-dstar-l-nu.hh>
-#include <eos/b-decays/bs-to-kstar-l-nu.hh>
-#include <eos/b-decays/lambdab-to-lambdac2595-l-nu.hh>
-#include <eos/b-decays/lambdab-to-lambdac2625-l-nu.hh>
-#include <eos/b-decays/inclusive-b-to-u.hh>
-#include <eos/b-decays/properties.hh>
-#include <eos/rare-b-decays/exclusive-b-to-dilepton.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-dilepton-large-recoil.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-gamma.hh>
-#include <eos/rare-b-decays/inclusive-b-to-s-dilepton.hh>
-#include <eos/rare-b-decays/inclusive-b-to-s-gamma.hh>
-#include <eos/rare-b-decays/lambda-b-to-lambda-dilepton.hh>
-#include <eos/utils/concrete_observable.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/observable_stub.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/observable.hh>
+#include <ctg/form-factors/form-factor-adapter.hh>
+#include <ctg/form-factors/analytic-b-to-pi-pi.hh>
+#include <ctg/form-factors/b-lcdas.hh>
+#include <ctg/form-factors/baryonic-impl.hh>
+#include <ctg/form-factors/mesonic-impl.hh>
+#include <ctg/form-factors/zero-recoil-sum-rule.hh>
+#include <ctg/b-decays/b-to-l-nu.hh>
+#include <ctg/b-decays/b-to-pi-l-nu.hh>
+#include <ctg/b-decays/b-to-pi-pi-l-nu.hh>
+#include <ctg/b-decays/b-to-d-l-nu.hh>
+#include <ctg/b-decays/b-to-dstar-l-nu.hh>
+#include <ctg/b-decays/bs-to-kstar-l-nu.hh>
+#include <ctg/b-decays/lambdab-to-lambdac2595-l-nu.hh>
+#include <ctg/b-decays/lambdab-to-lambdac2625-l-nu.hh>
+#include <ctg/b-decays/inclusive-b-to-u.hh>
+#include <ctg/b-decays/properties.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-dilepton.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-dilepton-large-recoil.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-gamma.hh>
+#include <ctg/rare-b-decays/inclusive-b-to-s-dilepton.hh>
+#include <ctg/rare-b-decays/inclusive-b-to-s-gamma.hh>
+#include <ctg/rare-b-decays/lambda-b-to-lambda-dilepton.hh>
+#include <ctg/utils/concrete_observable.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/observable_stub.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <algorithm>
 #include <map>
 
-namespace eos
+namespace ctg
 {
     ObservableEntry::ObservableEntry()
     {

@@ -3,30 +3,30 @@
 \chapter{Usage}
 \label{ch:usage}
 
-\EOS has been authored with several use cases in mind.
+\ctg has been authored with several use cases in mind.
 \begin{enumerate}
 \item The evaluation of observables and further theoretical quantities in the
-field of flavor physics. \EOS aspires to produce theory estimates of publication
+field of flavor physics. \ctg aspires to produce theory estimates of publication
 quality, and has produced such estimates in the past.
 
 \item The inference of parameters from experimental observations.  For this
-task, \EOS defaults to the Bayesian framework of parameter inference.
+task, \ctg defaults to the Bayesian framework of parameter inference.
 
 \item The production of toy events for a variety of flavor-physics-related
 processes using Monte Carlo methods.
 \end{enumerate}
 
-In the remainder of this chapter we document the usage of the existing \EOS
+In the remainder of this chapter we document the usage of the existing \ctg
 clients and scripts, to carry out tasks corresponding to the above use
 cases. We assume further that only the built-in observables, physics models
-and experimental constraints are used. The necessary steps to extend EOS with
+and experimental constraints are used. The necessary steps to extend ctg with
 new observables, physics models or constraints is discussed in \refch{extending}.
 
 
 \section{Browsing the List of Parameters, Observables and Constraints}
 \label{sec:usage:parameters+observables+constraints}
 
-\EOS has understands parameters, observables, options, kinematic variables, and
+\ctg has understands parameters, observables, options, kinematic variables, and
 constraints.  Parameters, observables and constraints share a common naming
 scheme, in order to allow categorize these quantities more readily. The naming
 scheme is as follows: each name can be decomposed into a prefix (before the
@@ -41,15 +41,15 @@ reads \texttt{1GeV}.\\
 
 Parameters are scalar floating-point-valued inputs. They are real-valued
 numbers that can be set to arbitrarily at run time.  The full list of
-parameters known to EOS as well as their default values and ranges can be browsed
-by running \client{eos-list-parameters}.\\
+parameters known to ctg as well as their default values and ranges can be browsed
+by running \client{ctg-list-parameters}.\\
 
-Observables are \EOS-internal functions that take a set of parameters and return a single
+Observables are \ctg-internal functions that take a set of parameters and return a single
 (real-valued) number. These functions take a set of kinematic variables as their arguments.
 They include true observables in the physical sense (e.g.
 a branching ratio) but also pseudo observables such as hadronic form factors.
-A full list of observables known to EOS can be listed by running
-\client{eos-list-observables}.\\
+A full list of observables known to ctg can be listed by running
+\client{ctg-list-observables}.\\
 
 Options are used to modify the behavior of an observable at run time.
 Universal examples include changing the physics model (via \option{model}) and
@@ -60,17 +60,17 @@ no way to list all possible options that pertain to a given observable.\\
 Kinematic variables are used to provide numerical inputs to an observable that can
 be changed on a per-observable level. As such, the names of kinematic variables are
 specific to each observable. The required kinematic variables for each observable
-can be looked up using the \client{eos-list-observables} client.\\
+can be looked up using the \client{ctg-list-observables} client.\\
 
 Constraints represent individual likelihood functions, either of
 an experimental measurement or a theoretical prediction. The list of built-in
-constraints is available through \client{eos-list-constraints}.
+constraints is available through \client{ctg-list-constraints}.
 
 
 \section{Evaluating Observables}
-\label{sec:usage:eos-evaluate}
+\label{sec:usage:ctg-evaluate}
 
-Observables can be evaluated using \client{eos-evaluate}. It accepts
+Observables can be evaluated using \client{ctg-evaluate}. It accepts
 the following command line arguments:
 \begin{itemize}
     \item[] \cli{--kinematics NAME VALUE}\\[\medskipamount]
@@ -113,7 +113,7 @@ $\mathcal{B}(\bar{B}^0\to \pi^+\mu^-\bar\nu_\mu)$, which is addressable as
 Further, we use the \option{BCL2008} \cite{Bourrely:2008za} parametrization of the
 $\bar{B}\to \pi$ form factor, as well as the Wolfenstein parametrization of the
 CKM matrix. The latter is achieved by choosing the physics model \option{SM}. By
-default, \EOS uses the most recent results of the UTfit collaboration's fit of
+default, \ctg uses the most recent results of the UTfit collaboration's fit of
 the CKM Wolfenstein parameter to data on tree-level decays.  In this example,
 we evaluate the observable and estimate parametric uncertainties based on
 the naive expectation of Gaussian uncertainty propagation. We
@@ -121,7 +121,7 @@ classify two budgets of parametric uncertainties: one for uncertainties
 pertaining to the form factors (labeled 'FF'), and one for uncertainties
 pertaining to the CKM matrix elements (labeled 'CKM').
 
-Our intentions translate to the following call to \client{eos-evaluate}:
+Our intentions translate to the following call to \client{ctg-evaluate}:
 \commandlineexample{examples/evaluate-btopilnu-integrated.bash}
 
 \begin{filecontents*}{examples/evaluate-btopilnu-integrated.out}
@@ -132,7 +132,7 @@ Our intentions translate to the following call to \client{eos-evaluate}:
 The above call yields the following output:
 \commandlineexample{examples/evaluate-btopilnu-integrated.out}
 
-The output of calls to \client{eos-evaluate} is structured as follows:
+The output of calls to \client{ctg-evaluate} is structured as follows:
 \begin{itemize}
     \item The first row names the observable at hand, as well as all active options.
     \item The second row contains column headers in the order:
@@ -148,22 +148,22 @@ The above structure repeats itself for every observable, as well as for each var
 of the kinematic variables as described by occurring \cli{--range} arguments.\\
 
 \section{Producing Random Parameter Samples}
-\label{sec:usage:eos-sample-mcmc+pmc}
+\label{sec:usage:ctg-sample-mcmc+pmc}
 
 For all the previously mentioned use cases (observable evaluation, Bayesian
 parameter inference, and production of pseudo events) one requires to draw
-random samples from some arbitrary \gls{PDF} $P(\vec\theta)$.  When using \EOS,
+random samples from some arbitrary \gls{PDF} $P(\vec\theta)$.  When using \ctg,
 these random samples can be produced from \gls{MCMC} random walks, using the
-Metropolis-Hastings algorithm, by calls to the \client{eos-sample-mcmc} client.
+Metropolis-Hastings algorithm, by calls to the \client{ctg-sample-mcmc} client.
 In a second step, refined samples or samples for a very complicated setup, can
 be obtained from an algorithm described in Ref.~\cite{Beaujean:2013}. This
 algorithm uses an adaptive importance sampling called Population Monte Carlo
-(PMC), implemented within the client \client{eos-sample-pmc}, and requires a
-prior run of \client{eos-sample-mcmc} for initialization.\\
+(PMC), implemented within the client \client{ctg-sample-pmc}, and requires a
+prior run of \client{ctg-sample-mcmc} for initialization.\\
 
 
-The follow command-line arguments are common to the \client{eos-sample-mcmc} and
-\client{eos-sample-pmc} clients, as well as further clients described in subsequent
+The follow command-line arguments are common to the \client{ctg-sample-mcmc} and
+\client{ctg-sample-pmc} clients, as well as further clients described in subsequent
 sections:
 \begin{itemize}
     \item[] \cli{--scan NAME --prior flat MIN MAX}\\[-3\medskipamount]
@@ -183,14 +183,14 @@ sections:
         the likelihood. The functional form of the likelihood, details such
         as correlations, and the required options for the observables used will
         be automatically looked up. In order to browse the entries of the
-        database, use the \client{eos-list-constraints} client.
+        database, use the \client{ctg-list-constraints} client.
 
     \item[] \cli{--fix NAME VALUE}\\[\medskipamount]
         The value of parameter \cli{NAME} will be set to the supplied
         \cli{VALUE}, and thus potentially deviate from its default value.
 \end{itemize}
 
-The \client{eos-sample-mcmc} client further accepts the following arguments:
+The \client{ctg-sample-mcmc} client further accepts the following arguments:
 \begin{itemize}
     \item[] \cli{--seed [time|VALUE]}\\[\medskipamount]
         This argument sets the seed value for the \gls{RNG}. Setting the
@@ -216,11 +216,11 @@ The \client{eos-sample-mcmc} client further accepts the following arguments:
 
     \item[] \cli{--output FILENAME}\\[\medskipamount]
         Use the file \cli{FILENAME} to store the output, using the \gls{HDF5} file format.
-        The resulting \gls{HDF5} file follows the EOS-\gls{MCMC} format, and can be accessed using, e.g.,
-        the \class{eos.data.MCMCDataFile} Python class.
+        The resulting \gls{HDF5} file follows the ctg-\gls{MCMC} format, and can be accessed using, e.g.,
+        the \class{ctg.data.MCMCDataFile} Python class.
 \end{itemize}
 
-The \client{eos-sample-pmc} client additionally accepts the following command-line arguments:
+The \client{ctg-sample-pmc} client additionally accepts the following command-line arguments:
 \begin{itemize}
     \item[] \cli{--seed [time|VALUE]}\\[\medskipamount]
         This argument sets the seed value for the \gls{RNG}. Setting the
@@ -243,7 +243,7 @@ The \client{eos-sample-pmc} client additionally accepts the following command-li
 
     \item[] \cli{--pmc-initialize-from-file HDF5FILE}\\[\medskipamount]
         Use the samples from a MCMC HDF5 output file \cli{HDF5FILE} as
-        generated with \client{eos-sample-mcmc}, in order to initialize the
+        generated with \client{ctg-sample-mcmc}, in order to initialize the
         mixture density of the initial PMC step.
 
     \item[] \cli{--pmc-group-by-r-value R}\\[\medskipamount]
@@ -270,8 +270,8 @@ The \client{eos-sample-pmc} client additionally accepts the following command-li
 
     \item[] \cli{--output FILENAME}\\[\medskipamount]
         Use the file \cli{FILENAME} to store the output, using the \gls{HDF5}
-        file format.  The resulting \gls{HDF5} file follows the EOS-\gls{PMC}
-        structure, and can be read using the \class{eos.data.PMCDataFile} Python
+        file format.  The resulting \gls{HDF5} file follows the ctg-\gls{PMC}
+        structure, and can be read using the \class{ctg.data.PMCDataFile} Python
         class.
 \end{itemize}
 
@@ -289,7 +289,7 @@ For the a-priori \gls{PDF}, we use uniform distributions for the BCL2008
 \cite{Bourrely:2008za} parameters for the $B\to \pi$ form factor $f^{B\pi}_+$.
 However, we construct a likelihood from the results of a recent study
 (IKMvD2016 \cite{Imsong:2014oqa}) of the form factor $f^{B\pi}_+(q^2)$ within \glspl{LCSR}.
-We now intend to draw random numbers from the posterior PDF using EOS' adaptive
+We now intend to draw random numbers from the posterior PDF using ctg' adaptive
 Metropolis-Hasting algorithm.  During its prerun phase, the algorithm adapts
 the chains' proposal functions. As a consequence, the prerun samples will in
 general \emph{not} be distributed according to the posterior \gls{PDF}. With a subequent
@@ -297,7 +297,7 @@ PMC sampling run in mind, we should demand at least $500$ steps. In this simple
 problem, the Markov chains converge (the prerun finishes) after a few thousand iterations;
 the adaption process should be executed after every $500$ steps.\\
 
-Our intentions translate to the following call to \client{eos-sample-mcmc}:
+Our intentions translate to the following call to \client{ctg-sample-mcmc}:
 \commandlineexample{examples/sample-mcmc-btopi-ff.bash}
 
 Optionally, if the prerun converges, the client can be used to perform a main run, in which
@@ -309,7 +309,7 @@ the progress of the computations can be monitored. The require options for these
 are shown above with a leading hash mark. Also, for a main run,
 the \texttt{--prerun-only} flag would need to be removed.\\
 
-We use the above call to \client{eos-sample-mcmc} in order to initialize a PMC
+We use the above call to \client{ctg-sample-mcmc} in order to initialize a PMC
 run. We wish for $4$ mixture components per MC group, and to skip $20\%$ of the
 MCMC samples as part of the burn in. MC groups will be created based on an
 $R$-value \cite{Gelman:1992zz} threshold of $1.5$. For each update, $500$
@@ -342,8 +342,8 @@ Both clients output copious amounts diagnostic data to the standard output, whic
     }
     \caption{%
         Histograms of the parameter of interest $|V_{ub}|$ in the two example
-        fits as described in \refsec{usage:eos-sample-mcmc+pmc}, and plotted
-        using the \client{eos-plot-1d} client; see \refsec{usage:eos-plot} for
+        fits as described in \refsec{usage:ctg-sample-mcmc+pmc}, and plotted
+        using the \client{ctg-plot-1d} client; see \refsec{usage:ctg-plot} for
         details.
     }
     \label{fig:usage:vub-example-samples}
@@ -353,19 +353,19 @@ We display the outcome of both the MCMC (prerun) sampling as well as the PMC sam
 in \reffig{usage:vub-example-samples}.
 
 \section{Merging Markov Chains from multiple files}
-\label{sec:usage:eos-merge-mcmc}
+\label{sec:usage:ctg-merge-mcmc}
 
 To run multiple Markov chains in parallel, one may use a compute cluster and
 submit independent jobs, each of which creates its own output file with one or
 more chains inside. To initialize PMC, it is necessary to have all Markov chains
-in a single HDF5 file. This is where \client{eos-merge-mcmc} comes into play. It
+in a single HDF5 file. This is where \client{ctg-merge-mcmc} comes into play. It
 allows one to merge chains from multiple files into a single HDF5 file and
 optionally to apply a cut such that chains that got stuck in irrelevant local
 modes in the prerun can be filtered out. Note that chains both from the prerun
-and main run are copied into the output file. \client{eos-merge-mcmc} accepts
+and main run are copied into the output file. \client{ctg-merge-mcmc} accepts
 the following command-line arguments:
 \begin{itemize}
-    \item[] Any number of input files created by \cli{eos-sample-mcmc}\\[-3\medskipamount]
+    \item[] Any number of input files created by \cli{ctg-sample-mcmc}\\[-3\medskipamount]
     \item[] \cli{--cut-off NUMBER}\\[\medskipamount]
         Skip chains whose maximum log posterior in the prerun is below the cut-off.
 
@@ -377,13 +377,13 @@ the following command-line arguments:
 \end{itemize}
 
 \section{Finding the Mode of a Probability Density}
-\label{sec:usage:eos-find-mode}
+\label{sec:usage:ctg-find-mode}
 
 The mode, best-fit point, or simply the most-likely value, of some \gls{PDF}
-$P(\vec\theta)$ is regularly searched for in physics analyses. EOS supplies the
-client \client{eos-find-mode}, which accepts the common set of arguments
-describing the PDF as already discussed for the \client{eos-sample-mcmc} and
-\client{eos-sample-pmc} clients, see \refsec{usage:eos-sample-mcmc+pmc} for
+$P(\vec\theta)$ is regularly searched for in physics analyses. ctg supplies the
+client \client{ctg-find-mode}, which accepts the common set of arguments
+describing the PDF as already discussed for the \client{ctg-sample-mcmc} and
+\client{ctg-sample-pmc} clients, see \refsec{usage:ctg-sample-mcmc+pmc} for
 further information.  In addition, it accepts the following command-line
 arguments:
 \begin{itemize}
@@ -400,7 +400,7 @@ arguments:
 \end{itemize}
 
 In order to illustrate the client's usage, we use the same example as
-discussed in \refsec{usage:eos-sample-mcmc+pmc}. The corresponding call
+discussed in \refsec{usage:ctg-sample-mcmc+pmc}. The corresponding call
 then reads:
 \commandlineexample{examples/find-mode-btopi-ff.bash}
 
@@ -422,13 +422,13 @@ in the last few lines, including
 \commandlineexample{examples/find-mode-btopi-ff.out}
 
 \section{Bayesian Uncertainty Propagation}
-\label{sec:usage:eos-propagate-uncertainty}
+\label{sec:usage:ctg-propagate-uncertainty}
 
-EOS presently supports two ways to propagate theory uncertainties in the
+ctg presently supports two ways to propagate theory uncertainties in the
 framework of Bayesian statistics: First, by using prior PDFs that describes
 the nuisance parameters; second, by using samples from a posterior PDF that
-have been obtained from running either \client{eos-sample-mcmc} or
-\client{eos-sample-pmc}. It accepts the following command-line arguments:
+have been obtained from running either \client{ctg-sample-mcmc} or
+\client{ctg-sample-pmc}. It accepts the following command-line arguments:
 \begin{itemize}
     \item[] \cli{--vary NAME --prior flat MIN MAX}\\[-3\medskipamount]
     \item[] \cli{--vary NAME [ABSMIN ABSMAX] --prior gaussian MIN CENTRAL MAX}\\[\medskipamount]
@@ -473,7 +473,7 @@ have been obtained from running either \client{eos-sample-mcmc} or
         larger than the actual length of any chain in the file.
 
         \emph{Note:} The file must have been produced by the
-        \client{eos-sample-mcmc} client.
+        \client{ctg-sample-mcmc} client.
 
         \emph{Note:} If you have the HDF5 commandline tools available, use
         \cli{h5ls -r HDF5FILE} to see the number and length of the chains.
@@ -487,7 +487,7 @@ have been obtained from running either \client{eos-sample-mcmc} or
         a named data set in the file \cli{HDF5FILE}.
 
         \emph{Note:} The file must have been produced by the
-        \client{eos-sample-pmc} client.
+        \client{ctg-sample-pmc} client.
 
     \item[] \cli{--pmc-sample-directory NAME}\\[\medskipamount]
         Use the named data set within the file specified with \cli{--pmc-input}.
@@ -520,34 +520,34 @@ of the $B$-meson decay constant $f_{B}$. For the former, we choose the
 HFAG average of the inclusive determination $|V_{ub}| = (4.45 \pm 0.26) \cdot 10^{-3}$
 \cite{Amhis:2014hma}, while for the latter we use the FLAG average
 $f_{B} = 0.188 \pm 0.007\,\GeV$ \cite{Aoki:2013ldr}.
-Our intention translates to the following call to \client{eos-propagate-uncertainty}:
+Our intention translates to the following call to \client{ctg-propagate-uncertainty}:
 \commandlineexample{examples/propagate-uncertainty-btotaunu.bash}
 
 As an exmple of the second way, we would like to use samples from the posterior
-PDF as obtained in \refsec{usage:eos-sample-mcmc+pmc} in order to predict the
+PDF as obtained in \refsec{usage:ctg-sample-mcmc+pmc} in order to predict the
 branching ratio of the differential decay $\bar{B}^0\to \pi e^- \bar{\nu}_e$, at various
 points in the kinematic range as the decay to muons described previously.
-Our intention translates to the following call to \client{eos-propagate-uncertainty}:
+Our intention translates to the following call to \client{ctg-propagate-uncertainty}:
 \commandlineexample{examples/propagate-uncertainty-btopilnu.bash}
 
 For both ways, the samples of the predictive distributions within the HDF5 files
-can be accessed using the \class{eos.data.UncertaintyDataFile} Python class.
+can be accessed using the \class{ctg.data.UncertaintyDataFile} Python class.
 
 \section{Plotting Random Samples}
-\label{sec:usage:eos-plot}
+\label{sec:usage:ctg-plot}
 
 Once random samples have been obtained from either a posterior PDF (e.g. as
-described in \refsec{usage:eos-sample-mcmc+pmc}) or a predictive PDF (e.g. as
-described in \refsec{usage:eos-propagate-uncertainty}), a visual inspection of
-the samples is the next step.  EOS provides scripts for this purpose, which
-plot histograms of either a marginalized 1D (\client{eos-plot-1d}) or heatmaps
-of 2D (\client{eos-plot-2d}) PDFs.  Both scripts presently detect the output
+described in \refsec{usage:ctg-sample-mcmc+pmc}) or a predictive PDF (e.g. as
+described in \refsec{usage:ctg-propagate-uncertainty}), a visual inspection of
+the samples is the next step.  ctg provides scripts for this purpose, which
+plot histograms of either a marginalized 1D (\client{ctg-plot-1d}) or heatmaps
+of 2D (\client{ctg-plot-2d}) PDFs.  Both scripts presently detect the output
 format by inspection of the resepective HDF5 file name. Files containing MCMC
 samples should be prefixed with \texttt{mcmc\_}, while PMC sample files should
 be prefixed with \texttt{pmc\_monolithic\_}. Files containing samples from the
 uncertainty propagation should be prefixed with \texttt{unc\_}.
 
-The \client{eos-plot-1d} produces a 1D histogram of the samples for one parameter.
+The \client{ctg-plot-1d} produces a 1D histogram of the samples for one parameter.
 It accepts the following arguments:
 \begin{itemize}
     \item[] \cli{HDF5FILE}\\[\medskipamount]
@@ -574,7 +574,7 @@ It accepts the following arguments:
         with \cli{KDEBANDWIDTH}.
 \end{itemize}
 
-The \client{eos-plot-2d} produces a 2D heatmap of the samples for two parameters.
+The \client{ctg-plot-2d} produces a 2D heatmap of the samples for two parameters.
 It accepts the following arguments
 \begin{itemize}
     \item[] \cli{HDF5FILE}\\[\medskipamount]

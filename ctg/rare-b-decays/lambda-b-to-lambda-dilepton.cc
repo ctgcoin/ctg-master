@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2014, 2015, 2016 Danny van Dyk
+ * Copyright (c) 2014, 2015, 2016 
  * Copyright (c) 2017 Thomas Blake
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,26 +18,26 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/form-factors/baryonic.hh>
-#include <eos/rare-b-decays/charm-loops.hh>
-#include <eos/rare-b-decays/lambda-b-to-lambda-dilepton.hh>
-#include <eos/utils/complex.hh>
-#include <eos/utils/destringify.hh>
-#include <eos/utils/integrate-impl.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/memoise.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/options.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
+#include <ctg/form-factors/baryonic.hh>
+#include <ctg/rare-b-decays/charm-loops.hh>
+#include <ctg/rare-b-decays/lambda-b-to-lambda-dilepton.hh>
+#include <ctg/utils/complex.hh>
+#include <ctg/utils/destringify.hh>
+#include <ctg/utils/integrate-impl.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/memoise.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/options.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
 
 #include <cmath>
 #include <functional>
 #include <map>
 #include <string>
 
-namespace eos
+namespace ctg
 {
     using std::norm;
 

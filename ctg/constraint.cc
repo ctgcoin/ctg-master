@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=marker foldmarker={{{,}}} : */
 
 /*
- * Copyright (c) 2011-2018 Danny van Dyk
+ * Copyright (c) 2011-2018 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,15 +19,15 @@
 
 #include <config.h>
 
-#include <eos/constraint.hh>
-#include <eos/statistics/log-likelihood.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/observable_set.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/qualified-name.hh>
-#include <eos/utils/stringify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/constraint.hh>
+#include <ctg/statistics/log-likelihood.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/observable_set.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/qualified-name.hh>
+#include <ctg/utils/stringify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
@@ -39,7 +39,7 @@
 
 namespace fs = boost::filesystem;
 
-namespace eos
+namespace ctg
 {
     UnknownConstraintError::UnknownConstraintError(const QualifiedName & name) :
         Exception("Constraint '" + name.str() + "' is unknown")
@@ -1452,19 +1452,19 @@ namespace eos
         std::map<QualifiedName, const ConstraintEntry *> result;
 
         fs::path base;
-        if (std::getenv("EOS_TESTS_CONSTRAINTS"))
+        if (std::getenv("ctg_TESTS_CONSTRAINTS"))
         {
-            std::string envvar = std::string(std::getenv("EOS_TESTS_CONSTRAINTS"));
+            std::string envvar = std::string(std::getenv("ctg_TESTS_CONSTRAINTS"));
             base = fs::system_complete(envvar);
         }
-        else if (std::getenv("EOS_HOME"))
+        else if (std::getenv("ctg_HOME"))
         {
-            std::string envvar = std::string(std::getenv("EOS_HOME"));
+            std::string envvar = std::string(std::getenv("ctg_HOME"));
             base = fs::system_complete(envvar) / "constraints";
         }
         else
         {
-            base = fs::system_complete(EOS_DATADIR "/eos/constraints/");
+            base = fs::system_complete(ctg_DATADIR "/ctg/constraints/");
         }
 
         if (! fs::exists(base))

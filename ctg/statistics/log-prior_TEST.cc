@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,12 +18,12 @@
  */
 
 #include <test/test.hh>
-#include <eos/statistics/histogram.hh>
-#include <eos/statistics/log-prior.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/statistics/histogram.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/utils/power_of.hh>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class LogPriorTest :
     public TestCase

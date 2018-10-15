@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,17 +17,17 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_STATISTICS_PRIOR_SAMPLER_HH
-#define EOS_GUARD_SRC_STATISTICS_PRIOR_SAMPLER_HH 1
+#ifndef ctg_GUARD_SRC_STATISTICS_PRIOR_SAMPLER_HH
+#define ctg_GUARD_SRC_STATISTICS_PRIOR_SAMPLER_HH 1
 
-#include <eos/statistics/log-prior-fwd.hh>
-#include <eos/utils/observable_set.hh>
-#include <eos/utils/private_implementation_pattern.hh>
-#include <eos/utils/hdf5-fwd.hh>
+#include <ctg/statistics/log-prior-fwd.hh>
+#include <ctg/utils/observable_set.hh>
+#include <ctg/utils/private_implementation_pattern.hh>
+#include <ctg/utils/hdf5-fwd.hh>
 
 #include <vector>
 
-namespace eos
+namespace ctg
 {
     /*!
      * Perform simple uncertainty propagation by defining parameters to be varied,

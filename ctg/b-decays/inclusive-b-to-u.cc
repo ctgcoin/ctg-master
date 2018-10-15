@@ -1,15 +1,15 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2015 Danny van Dyk
+ * Copyright (c) 2015 
  * Copyright (c) 2018 Ahmet Kokulu
  * Copyright (c) 2018 Christoph Bobeth
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,13 +19,13 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/b-decays/inclusive-b-to-u.hh>
-#include <eos/utils/complex.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/options-impl.hh>
+#include <ctg/b-decays/inclusive-b-to-u.hh>
+#include <ctg/utils/complex.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/options-impl.hh>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<BToXuLeptonNeutrino<Naive>>

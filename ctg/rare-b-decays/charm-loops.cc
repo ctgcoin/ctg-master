@@ -1,15 +1,15 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2014, 2017 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2014, 2017 
  * Copyright (c) 2010 Christoph Bobeth
  * Copyright (c) 2010, 2011 Christian Wacker
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,18 +19,18 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/rare-b-decays/charm-loops.hh>
-#include <eos/rare-b-decays/long-distance.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/stringify.hh>
+#include <ctg/rare-b-decays/charm-loops.hh>
+#include <ctg/rare-b-decays/long-distance.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/stringify.hh>
 
 #include <cmath>
 #include <complex>
 
 #include <gsl/gsl_sf_dilog.h>
 
-namespace eos
+namespace ctg
 {
     using std::atan;
     using std::complex;

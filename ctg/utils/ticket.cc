@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2008, 2015 Danny van Dyk <danny.dyk@uni-dortmund.de>
+ * Copyright (c) 2008, 2015  <>
  *
- * This file is part of the EOS program. EOS is free software;
+ * This file is part of the ctg program. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,17 +17,17 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/condition_variable.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/lock.hh>
-#include <eos/utils/mutex.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/ticket.hh>
+#include <ctg/utils/condition_variable.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/lock.hh>
+#include <ctg/utils/mutex.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/ticket.hh>
 
 #include <list>
 #include <memory>
 
-namespace eos
+namespace ctg
 {
     template <> struct Implementation<Ticket>
     {

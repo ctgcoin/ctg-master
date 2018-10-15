@@ -2,13 +2,13 @@
 
 /*
  * Copyright (c) 2017 Elena Graverini
- * Copyright (c) 2017 Danny van Dyk
+ * Copyright (c) 2017 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,18 +18,18 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/form-factors/form-factors.hh>
-#include <eos/form-factors/baryonic.hh>
-#include <eos/b-decays/lambdab-to-lambdac2625-l-nu.hh>
-#include <eos/utils/integrate.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/save.hh>
+#include <ctg/form-factors/form-factors.hh>
+#include <ctg/form-factors/baryonic.hh>
+#include <ctg/b-decays/lambdab-to-lambdac2625-l-nu.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/save.hh>
 #include <math.h>
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<LambdaBToLambdaC2625LeptonNeutrino>

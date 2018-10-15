@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 - 2013 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -16,23 +16,23 @@
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
-#include <eos/statistics/population-monte-carlo-sampler.hh>
+#include <ctg/statistics/population-monte-carlo-sampler.hh>
 
-#include <eos/statistics/chain-group.hh>
-#include <eos/statistics/hierarchical-clustering.hh>
-#include <eos/statistics/log-posterior.hh>
-#include <eos/statistics/markov-chain-sampler.hh>
-#include <eos/statistics/proposal-functions.hh>
-#include <eos/statistics/rvalue.hh>
-#include <eos/statistics/welford.hh>
-#include <eos/utils/density.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/stringify.hh>
-#include <eos/utils/thread_pool.hh>
+#include <ctg/statistics/chain-group.hh>
+#include <ctg/statistics/hierarchical-clustering.hh>
+#include <ctg/statistics/log-posterior.hh>
+#include <ctg/statistics/markov-chain-sampler.hh>
+#include <ctg/statistics/proposal-functions.hh>
+#include <ctg/statistics/rvalue.hh>
+#include <ctg/statistics/welford.hh>
+#include <ctg/utils/density.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/stringify.hh>
+#include <ctg/utils/thread_pool.hh>
 
 #include <Minuit2/FCNGradientBase.h>
 #include <Minuit2/FunctionMinimum.h>
@@ -51,9 +51,9 @@ extern "C" {
 
 #include <gsl/gsl_randist.h>
 
-using namespace eos::proposal_functions;
+using namespace ctg::proposal_functions;
 
-namespace eos
+namespace ctg
 {
     // interface routines
     namespace pmc

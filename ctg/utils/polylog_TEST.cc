@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Christian Wacker
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,14 +18,14 @@
  */
 
 #include <test/test.hh>
-#include <eos/utils/polylog.hh>
+#include <ctg/utils/polylog.hh>
 
 #include <fstream>
 
 #include <iomanip>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class PolylogarithmTest :
     public TestCase
@@ -47,9 +47,9 @@ class PolylogarithmTest :
 
         virtual void run() const
         {
-            std::ifstream z_file(EOS_SRCDIR "/eos/utils/polylog_TEST_z.bin");
-            std::ifstream dilog_file(EOS_SRCDIR "/eos/utils/polylog_TEST_dilog.bin");
-            std::ifstream trilog_file(EOS_SRCDIR "/eos/utils/polylog_TEST_trilog.bin");
+            std::ifstream z_file(ctg_SRCDIR "/ctg/utils/polylog_TEST_z.bin");
+            std::ifstream dilog_file(ctg_SRCDIR "/ctg/utils/polylog_TEST_dilog.bin");
+            std::ifstream trilog_file(ctg_SRCDIR "/ctg/utils/polylog_TEST_trilog.bin");
 
             static const double eps = 1e-12;
 

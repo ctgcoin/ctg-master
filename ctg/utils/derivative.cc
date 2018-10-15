@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2014 Danny van Dyk
+ * Copyright (c) 2014 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,12 +17,12 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/derivative.hh>
+#include <ctg/utils/derivative.hh>
 
 #include <limits>
 #include <cmath>
 
-namespace eos
+namespace ctg
 {
     template <>
     double derivative<1u, deriv::TwoSided>(const std::function<double (const double &)> & f, const double & x0)

@@ -3,8 +3,8 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeosbdecays.la
-libeosbdecays_la_SOURCES = \
+lib_LTLIBRARIES = libctgbdecays.la
+libctgbdecays_la_SOURCES = \
 	b-to-d-l-nu.cc b-to-d-l-nu.hh \
 	b-to-dstar-l-nu.cc b-to-dstar-l-nu.hh \
 	b-to-d-l-x-nu.cc b-to-d-l-x-nu.hh \
@@ -18,14 +18,14 @@ libeosbdecays_la_SOURCES = \
 	lambdab-to-lambdac2625-l-nu.cc lambdab-to-lambdac2625-l-nu.hh \
 	inclusive-b-to-u.cc inclusive-b-to-u.hh \
 	properties.cc properties.hh
-libeosbdecays_la_LIBADD = \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
+libctgbdecays_la_LIBADD = \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
 	-lgslcblas \
 	-lgsl
 
-include_eos_bdecaysdir = $(includedir)/eos/b-decays
-include_eos_bdecays_HEADERS = \
+include_ctg_bdecaysdir = $(includedir)/ctg/b-decays
+include_ctg_bdecays_HEADERS = \
 	b-to-d-l-nu.hh \
 	b-to-dstar-l-nu.hh \
 	b-to-d-l-x-nu.hh \
@@ -41,7 +41,7 @@ include_eos_bdecays_HEADERS = \
 EXTRA_DIST =
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	b-to-pi-l-nu_TEST \
@@ -54,11 +54,11 @@ TESTS = \
 	properties_TEST
 
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	libeosbdecays.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	libctgbdecays.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 b_to_d_l_nu_TEST_SOURCES = b-to-d-l-nu_TEST.cc

@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,16 +17,16 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/log-posterior_TEST.hh>
-#include <eos/statistics/density-wrapper_TEST.hh>
-#include <eos/statistics/population-monte-carlo-sampler.hh>
-#include <eos/statistics/markov-chain-sampler.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
+#include <ctg/statistics/log-posterior_TEST.hh>
+#include <ctg/statistics/density-wrapper_TEST.hh>
+#include <ctg/statistics/population-monte-carlo-sampler.hh>
+#include <ctg/statistics/markov-chain-sampler.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
 #include <test/test.hh>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class PopulationMonteCarloSamplerTest :
     public TestCase
@@ -44,7 +44,7 @@ class PopulationMonteCarloSamplerTest :
             MarkovChainSampler::Config mcmc_config = MarkovChainSampler::Config::Default();
             mcmc_config.need_main_run = false;
             mcmc_config.number_of_chains = 2;
-            mcmc_config.output_file = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-density-prerun.hdf5";
+            mcmc_config.output_file = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-density-prerun.hdf5";
             mcmc_config.parallelize = false;
             mcmc_config.prerun_iterations_update = 300;
             mcmc_config.prerun_iterations_max = 5000;
@@ -58,7 +58,7 @@ class PopulationMonteCarloSamplerTest :
             pmc_config.max_updates = 5;
             pmc_config.samples_per_component = 400;
             pmc_config.final_samples = 50000;
-            pmc_config.output_file = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-density.hdf5";;
+            pmc_config.output_file = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-density.hdf5";;
             pmc_config.parallelize = true;
             pmc_config.seed = 23;
             pmc_config.store = true;
@@ -110,7 +110,7 @@ class PopulationMonteCarloSamplerTest :
 
                 /* setup the MCMC sampler for the prerun to create the proposal */
 
-                static const std::string mcmc_file_name = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-mcmc-prerun.hdf5";
+                static const std::string mcmc_file_name = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-mcmc-prerun.hdf5";
 
                 std::remove(mcmc_file_name.c_str());
 
@@ -141,11 +141,11 @@ class PopulationMonteCarloSamplerTest :
                 }
 
                 /* initialize PMC from MCMC */
-                static const std::string pmc_output = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-output.hdf5";
-                static const std::string pmc_output_components = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-output-components.hdf5";
-                static const std::string pmc_output_hc = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-output-hc.hdf5";
-                static const std::string pmc_output_resume = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-output-resume.hdf5";
-                static const std::string pmc_output_split = EOS_BUILDDIR "/eos/statistics/pmc_sampler_TEST-output-split.hdf5";
+                static const std::string pmc_output = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-output.hdf5";
+                static const std::string pmc_output_components = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-output-components.hdf5";
+                static const std::string pmc_output_hc = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-output-hc.hdf5";
+                static const std::string pmc_output_resume = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-output-resume.hdf5";
+                static const std::string pmc_output_split = ctg_BUILDDIR "/ctg/statistics/pmc_sampler_TEST-output-split.hdf5";
 
                 PopulationMonteCarloSampler::Config pmc_config = PopulationMonteCarloSampler::Config::Default();
                 pmc_config.max_updates = 5;

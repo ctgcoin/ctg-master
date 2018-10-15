@@ -3,8 +3,8 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeosformfactors.la
-libeosformfactors_la_SOURCES = \
+lib_LTLIBRARIES = libctgformfactors.la
+libctgformfactors_la_SOURCES = \
 	analytic-b-to-kstar.hh analytic-b-to-kstar.cc \
 	analytic-b-to-pi.hh analytic-b-to-pi.cc \
 	analytic-b-to-pi-pi.hh analytic-b-to-pi-pi.cc \
@@ -17,14 +17,14 @@ libeosformfactors_la_SOURCES = \
 	mesonic.cc mesonic.hh mesonic-impl.hh \
 	pi-lcdas.cc pi-lcdas.hh \
 	zero-recoil-sum-rule.cc zero-recoil-sum-rule.hh
-libeosformfactors_la_LIBADD = \
-	$(top_builddir)/eos/utils/libeosutils.la \
+libctgformfactors_la_LIBADD = \
+	$(top_builddir)/ctg/utils/libctgutils.la \
 	-lgslcblas \
 	-lgsl \
 	-lyaml-cpp
 
-include_eos_rarebdecaysdir = $(includedir)/eos/form-factors
-include_eos_rarebdecays_HEADERS = \
+include_ctg_rarebdecaysdir = $(includedir)/ctg/form-factors
+include_ctg_rarebdecays_HEADERS = \
 	analytic-b-to-kstar.hh \
 	analytic-b-to-pi.hh \
 	analytic-b-to-pi-pi.hh \
@@ -34,7 +34,7 @@ include_eos_rarebdecays_HEADERS = \
 	pi-lcdas.hh
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	analytic-b-to-kstar_TEST \
@@ -47,10 +47,10 @@ TESTS = \
 	mesonic_TEST \
 	pi-lcdas_TEST
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	libeosformfactors.la \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	libctgformfactors.la \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 analytic_b_to_kstar_TEST_SOURCES = analytic-b-to-kstar_TEST.cc

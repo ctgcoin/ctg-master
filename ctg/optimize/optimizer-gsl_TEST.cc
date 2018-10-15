@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2015, 2016 Danny van Dyk
+ * Copyright (c) 2015, 2016 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,13 +17,13 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/optimize/optimizer.hh>
-#include <eos/optimize/optimizer-gsl.hh>
-#include <eos/statistics/density-wrapper.hh>
-#include <eos/statistics/simple-parameters.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/optimize/optimizer.hh>
+#include <ctg/optimize/optimizer-gsl.hh>
+#include <ctg/statistics/density-wrapper.hh>
+#include <ctg/statistics/simple-parameters.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 #include <test/test.hh>
 
 #include <cmath>
@@ -32,7 +32,7 @@
 #include <iostream>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 namespace
 {
@@ -73,7 +73,7 @@ namespace
     }
 }
 
-namespace eos
+namespace ctg
 {
      DensityWrapper
      make_multivariate_unit_normal(const unsigned & ndim)

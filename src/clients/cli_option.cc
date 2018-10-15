@@ -1,16 +1,16 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2016, 2017 Danny van Dyk
+ * Copyright (c) 2016, 2017 
  *
  * Copied from the Paludis package manager, which is
  * Copyright (c) 2005-2010 Ciaran McCreesh
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -26,9 +26,9 @@
 #include "cli_option.hh"
 #include "cli_section.hh"
 
-#include <eos/utils/destringify.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/utils/destringify.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <set>
 #include <vector>
@@ -51,14 +51,14 @@ namespace
             return p.first == arg;
         }
 
-        bool operator() (const eos::cli::AllowedEnumArg & p) const
+        bool operator() (const ctg::cli::AllowedEnumArg & p) const
         {
             return p.long_name() == arg || (p.short_name() && std::string(1, p.short_name()) == arg);
         }
     };
 }
 
-namespace eos
+namespace ctg
 {
     template <>
     struct Implementation<cli::EnumArg>

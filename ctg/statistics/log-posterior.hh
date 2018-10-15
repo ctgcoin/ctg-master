@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,16 +17,16 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_STATISTICS_LOG_POSTERIOR_HH
-#define EOS_GUARD_SRC_STATISTICS_LOG_POSTERIOR_HH 1
+#ifndef ctg_GUARD_SRC_STATISTICS_LOG_POSTERIOR_HH
+#define ctg_GUARD_SRC_STATISTICS_LOG_POSTERIOR_HH 1
 
-#include <eos/statistics/log-likelihood.hh>
-#include <eos/statistics/log-posterior-fwd.hh>
-#include <eos/statistics/log-prior.hh>
-#include <eos/utils/density.hh>
-#include <eos/utils/hdf5-fwd.hh>
-#include <eos/utils/private_implementation_pattern.hh>
-#include <eos/utils/verify.hh>
+#include <ctg/statistics/log-likelihood.hh>
+#include <ctg/statistics/log-posterior-fwd.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/utils/density.hh>
+#include <ctg/utils/hdf5-fwd.hh>
+#include <ctg/utils/private_implementation_pattern.hh>
+#include <ctg/utils/verify.hh>
 
 #include <set>
 #include <vector>
@@ -42,7 +42,7 @@ namespace ROOT
     }
 }
 
-namespace eos
+namespace ctg
 {
     struct MinuitAdapter;
 
@@ -133,7 +133,7 @@ namespace eos
              * @param descriptions All parameter ranges etc. Beware, the association to the underlying Parameters object is independent.
              * @param priors The string representation of a prior distribution.
              * @param constraints The string representation of an individual constraint.
-             * @param hash The EOS version used to create the file.
+             * @param hash The ctg version used to create the file.
              */
             static void read_descriptions(hdf5::File & file, const std::string & data_base_name,
                                           std::vector<ParameterDescription>& descriptions,

@@ -7,10 +7,10 @@ unused: &linux-template
   services: docker
   sudo: required
   before_install:
-    - docker build -t eos:${DOCKER_TARGET} -f .travis/${DOCKER_TARGET} .
+    - docker build -t ctg:${DOCKER_TARGET} -f .travis/${DOCKER_TARGET} .
   script:
     - >
-       docker run -it -e COVERALLS_TOKEN -e PACKAGECLOUD_TOKEN eos:${DOCKER_TARGET}
+       docker run -it -e COVERALLS_TOKEN -e PACKAGECLOUD_TOKEN ctg:${DOCKER_TARGET}
        /bin/bash /src/.travis/build-and-test.bash ${DOCKER_TARGET} ${DOCKER_CXX} "${TRAVIS_TAG}"
 
 matrix:
@@ -33,7 +33,7 @@ matrix:
       sudo: required
       before_install:
         - sudo rm /usr/local/include/c++
-        - brew tap eos/eos
+        - brew tap ctg/ctg
         - brew outdated boost || brew upgrade boost
         - brew outdated boost-python3 || brew upgrade boost-python3
         - brew install autoconf boost-python3 gsl hdf5 libtool minuit2 pmclib python3 yaml-cpp

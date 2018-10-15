@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,14 +17,14 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/log-posterior_TEST.hh>
-#include <eos/statistics/log-prior.hh>
-#include <eos/statistics/prior-sampler.hh>
-#include <eos/utils/hdf5.hh>
+#include <ctg/statistics/log-posterior_TEST.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/statistics/prior-sampler.hh>
+#include <ctg/utils/hdf5.hh>
 #include <test/test.hh>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class PriorSamplerTest :
     public TestCase
@@ -39,7 +39,7 @@ class PriorSamplerTest :
         {
             static const double eps = 1e-14;
 
-            static const std::string file_name(EOS_BUILDDIR "/eos/statistics/prior-sampler_TEST.hdf5");
+            static const std::string file_name(ctg_BUILDDIR "/ctg/statistics/prior-sampler_TEST.hdf5");
 
             PriorSampler::Config config = PriorSampler::Config::Default();
             config.n_samples = 4;

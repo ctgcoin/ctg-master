@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2012 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,13 +17,13 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/hierarchical-clustering.hh>
-#include <eos/utils/exception.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/stringify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/statistics/hierarchical-clustering.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/stringify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <algorithm>
 #include <cmath>
@@ -32,7 +32,7 @@
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_linalg.h>
 
-namespace eos
+namespace ctg
 {
     template <> struct Implementation<HierarchicalClustering>
     {

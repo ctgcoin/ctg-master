@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011 Danny van Dyk
+ * Copyright (c) 2010, 2011 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,7 +18,7 @@
  */
 
 #include <test/test.hh>
-#include <eos/utils/log.hh>
+#include <ctg/utils/log.hh>
 
 #include <cstdlib>
 #include <iostream>
@@ -28,7 +28,7 @@
 namespace test
 {
     // Use a singleton to avoid the static initialization fiasco
-    // Use a small, local singleton in order to avoid linking against libeosutils
+    // Use a small, local singleton in order to avoid linking against libctgutils
     struct TestCasesHolder
     {
         std::list<const TestCase *> test_cases;
@@ -98,8 +98,8 @@ int main(int, char ** argv)
     if (std::string::npos != pos)
         program_name.erase(0, pos + 1);
 
-    eos::Log::instance()->set_program_name(program_name);
-    eos::Log::instance()->set_log_level(eos::ll_debug);
+    ctg::Log::instance()->set_program_name(program_name);
+    ctg::Log::instance()->set_log_level(ctg::ll_debug);
 
     for (std::list<const test::TestCase *>::const_iterator i(test::TestCasesHolder::instance()->test_cases.begin()),
             i_end(test::TestCasesHolder::instance()->test_cases.end()) ; i != i_end ; ++i)

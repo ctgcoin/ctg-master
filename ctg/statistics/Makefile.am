@@ -17,8 +17,8 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeosstatistics.la
-libeosstatistics_la_SOURCES = \
+lib_LTLIBRARIES = libctgstatistics.la
+libctgstatistics_la_SOURCES = \
 	chain-group.cc chain-group.hh \
 	chi-squared.hh chi-squared.cc \
 	density-wrapper.cc density-wrapper.hh \
@@ -35,18 +35,18 @@ libeosstatistics_la_SOURCES = \
 	simple-parameters.cc simple-parameters.hh \
 	test-statistic.cc test-statistic.hh test-statistic-impl.hh \
 	welford.cc welford.hh
-libeosstatistics_la_LIBADD = -lpthread -lgsl -lgslcblas -lm -lMinuit2
-libeosstatistics_la_CXXFLAGS = $(AM_CXXFLAGS) $(GSL_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
-libeosstatistics_la_LDFLAGS = $(AM_CXXFLAGS) $(GSL_LDFLAGS) $(MINUIT2_LDFLAGS)
+libctgstatistics_la_LIBADD = -lpthread -lgsl -lgslcblas -lm -lMinuit2
+libctgstatistics_la_CXXFLAGS = $(AM_CXXFLAGS) $(GSL_CXXFLAGS) $(HDF5_CXXFLAGS) $(MINUIT2_CXXFLAGS)
+libctgstatistics_la_LDFLAGS = $(AM_CXXFLAGS) $(GSL_LDFLAGS) $(MINUIT2_LDFLAGS)
 
-if EOS_ENABLE_PMC
-libeosstatistics_la_SOURCES += \
+if ctg_ENABLE_PMC
+libctgstatistics_la_SOURCES += \
 	population-monte-carlo-sampler.cc population-monte-carlo-sampler.hh
-libeosstatistics_la_LIBADD += -lpmc -ldl
+libctgstatistics_la_LIBADD += -lpmc -ldl
 endif
 
-include_eos_statisticsdir = $(includedir)/eos/statistics
-include_eos_statistics_HEADERS = \
+include_ctg_statisticsdir = $(includedir)/ctg/statistics
+include_ctg_statistics_HEADERS = \
 	chain-group.hh \
 	chi-squared.hh \
 	density-wrapper.hh \
@@ -63,12 +63,12 @@ include_eos_statistics_HEADERS = \
 	simple-parameters.hh \
 	welford.hh
 
-if EOS_ENABLE_PMC
-include_eos_statistics_HEADERS += population-monte-carlo-sampler.hh
+if ctg_ENABLE_PMC
+include_ctg_statistics_HEADERS += population-monte-carlo-sampler.hh
 endif
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	chi-squared_TEST \
@@ -86,12 +86,12 @@ TESTS = \
 	simple-parameters_TEST \
 	welford_TEST
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	libeosstatistics.la \
-	$(top_builddir)/eos/libeos.la \
-	$(top_builddir)/eos/utils/libeosutils.la
+	$(top_builddir)/test/libctgtest.a \
+	libctgstatistics.la \
+	$(top_builddir)/ctg/libctg.la \
+	$(top_builddir)/ctg/utils/libctgutils.la
 
-if EOS_ENABLE_PMC
+if ctg_ENABLE_PMC
 TESTS += population-monte-carlo-sampler_TEST
 endif
 
@@ -119,7 +119,7 @@ markov_chain_sampler_TEST_SOURCES = markov-chain-sampler_TEST.cc density-wrapper
 markov_chain_sampler_TEST_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
 markov_chain_sampler_TEST_LDFLAGS = $(AM_CXXFLAGS) $(HDF5_LDFLAGS)
 
-if EOS_ENABLE_PMC
+if ctg_ENABLE_PMC
 population_monte_carlo_sampler_TEST_SOURCES = population-monte-carlo-sampler_TEST.cc density-wrapper_TEST.cc
 population_monte_carlo_sampler_TEST_CXXFLAGS = $(AM_CXXFLAGS) $(HDF5_CXXFLAGS)
 population_monte_carlo_sampler_TEST_LDFLAGS = $(AM_CXXFLAGS) $(HDF5_LDFLAGS) -lpmc -ldl

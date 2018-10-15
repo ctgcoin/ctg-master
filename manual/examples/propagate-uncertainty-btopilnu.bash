@@ -1,4 +1,4 @@
-eos-propagate-uncertainty \
+ctg-propagate-uncertainty \
     --kinematics s  0.00 --observable "B->pilnu::dBR/ds;l=e,form-factors=BCL2008,model=CKMScan" \
     --kinematics s  0.25 --observable "B->pilnu::dBR/ds;l=e,form-factors=BCL2008,model=CKMScan" \
     --kinematics s  0.50 --observable "B->pilnu::dBR/ds;l=e,form-factors=BCL2008,model=CKMScan" \

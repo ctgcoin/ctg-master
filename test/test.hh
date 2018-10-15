@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2013, 2016 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2013, 2016 
  * Copyright (c) 2014 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -22,8 +22,8 @@
 #define WILSON_FITTER_GUARD_TEST_TEST_HH 1
 
 #include <config.h>
-#include <eos/utils/exception.hh>
-#include <eos/utils/stringify.hh>
+#include <ctg/utils/exception.hh>
+#include <ctg/utils/stringify.hh>
 
 #include <cmath>
 #include <iostream>
@@ -199,10 +199,10 @@ namespace test
         { \
             expression; \
         } \
-        catch (eos::Exception & e) \
+        catch (ctg::Exception & e) \
         { \
             throw TestCaseFailedException(__LINE__, __FILE__, \
-                    "Caught unexpected eos::Exception in '" #expression "': " + std::string(e.what())); \
+                    "Caught unexpected ctg::Exception in '" #expression "': " + std::string(e.what())); \
         } \
         catch (...) \
         { \

@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2017 Danny van Dyk
+ * Copyright (c) 2017 
  * Copyright (c) 2017 Elena Graverini
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,15 +19,15 @@
  */
 
 
-#ifndef EOS_GUARD_EOS_FORM_FACTORS_HQET_B_TO_C_HH
-#define EOS_GUARD_EOS_FORM_FACTORS_HQET_B_TO_C_HH 1
+#ifndef ctg_GUARD_ctg_FORM_FACTORS_HQET_B_TO_C_HH
+#define ctg_GUARD_ctg_FORM_FACTORS_HQET_B_TO_C_HH 1
 
-#include <eos/utils/diagnostics.hh>
-#include <eos/utils/options.hh>
-#include <eos/utils/parameters.hh>
-#include <eos/utils/private_implementation_pattern.hh>
+#include <ctg/utils/diagnostics.hh>
+#include <ctg/utils/options.hh>
+#include <ctg/utils/parameters.hh>
+#include <ctg/utils/private_implementation_pattern.hh>
 
-namespace eos
+namespace ctg
 {
     class HQETBToC :
         public ParameterUser,

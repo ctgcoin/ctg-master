@@ -1,11 +1,11 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#ifndef EOS_GUARD_EOS_UTILS_POLYLOG_HH
-#define EOS_GUARD_EOS_UTILS_POLYLOG_HH 1
+#ifndef ctg_GUARD_ctg_UTILS_POLYLOG_HH
+#define ctg_GUARD_ctg_UTILS_POLYLOG_HH 1
 
-#include <eos/utils/complex.hh>
+#include <ctg/utils/complex.hh>
 
-namespace eos
+namespace ctg
 {
     complex<double> dilog(const complex<double> & z) __attribute__ ((pure));
 

@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,19 +17,19 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_STATISTICS_MARKOV_CHAIN_HH
-#define EOS_GUARD_SRC_STATISTICS_MARKOV_CHAIN_HH 1
+#ifndef ctg_GUARD_SRC_STATISTICS_MARKOV_CHAIN_HH
+#define ctg_GUARD_SRC_STATISTICS_MARKOV_CHAIN_HH 1
 
-#include <eos/utils/density-fwd.hh>
-#include <eos/utils/hdf5-fwd.hh>
-#include <eos/utils/parameters.hh>
-#include <eos/utils/stringify.hh>
+#include <ctg/utils/density-fwd.hh>
+#include <ctg/utils/hdf5-fwd.hh>
+#include <ctg/utils/parameters.hh>
+#include <ctg/utils/stringify.hh>
 
 #include <vector>
 
 #include <gsl/gsl_rng.h>
 
-namespace eos
+namespace ctg
 {
     /*!
      * An implementation of a Markov chain using the Metropolis-Hasting algorithm

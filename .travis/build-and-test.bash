@@ -18,9 +18,9 @@ function build_and_test_ubuntu() {
     make -C /src/manual/examples examples
     if [[ -n ${TAG} ]] && [[ "g++" == ${CXX} ]]; then
         echo Building debian package for ${OS}
-        export DESTDIR=/tmp/eos-${TAG#v}
+        export DESTDIR=/tmp/ctg-${TAG#v}
         make deb DESTDIR=${DESTDIR} OS=${OS}
-        package_cloud push eos/eos/ubuntu/${OS} /tmp/eos-${TAG#v}.deb
+        package_cloud push ctg/ctg/ubuntu/${OS} /tmp/ctg-${TAG#v}.deb
     fi
     popd
 }

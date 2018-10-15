@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2012, 2013, 2015, 2016 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2012, 2013, 2015, 2016 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,10 +18,10 @@
  */
 
 #include <test/test.hh>
-#include <eos/observable.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
-#include <eos/utils/complex.hh>
-#include <eos/utils/wilson-polynomial.hh>
+#include <ctg/observable.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
+#include <ctg/utils/complex.hh>
+#include <ctg/utils/wilson-polynomial.hh>
 
 #include <array>
 #include <cmath>
@@ -31,10 +31,10 @@
 #include <vector>
 
 // Uncomment the following #define to generate new test data for the Bobeth compatibility tests
-//#define EOS_GENERATE_TEST_DATA
+//#define ctg_GENERATE_TEST_DATA
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class BToKstarDileptonLowRecoilTest :
     public TestCase
@@ -481,8 +481,8 @@ class BToKstarDileptonLowRecoilBobethCompatibilityTest :
             observables.push_back(Observable::make("B->K^*ll::A_FB@LowRecoil;q=d,l=mu", p, k, o));
             observables.push_back(Observable::make("B->K^*ll::F_L@LowRecoil;q=d,l=mu",  p, k, o));
 
-            std::string filename(EOS_SRCDIR "/eos/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil_TEST-btokstarll.data");
-#ifdef EOS_GENERATE_TEST_DATA
+            std::string filename(ctg_SRCDIR "/ctg/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil_TEST-btokstarll.data");
+#ifdef ctg_GENERATE_TEST_DATA
             {
                 std::cout << "-- GENERATING test case data for B->K^*ll@LowRecoil --" << std::endl;
                 RandomNumberGenerator rng;
@@ -866,8 +866,8 @@ class BToKDileptonLowRecoilBobethCompatibilityTest :
                 TEST_CHECK_MSG(observables.back(), "Could not create '" + s + "'");
             }
 
-            std::string filename(EOS_SRCDIR "/eos/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil_TEST-btokll.data");
-#ifdef EOS_GENERATE_TEST_DATA
+            std::string filename(ctg_SRCDIR "/ctg/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil_TEST-btokll.data");
+#ifdef ctg_GENERATE_TEST_DATA
             {
                 std::cout << "-- GENERATING test case data for B->Kll@LowRecoil --" << std::endl;
                 RandomNumberGenerator rng;

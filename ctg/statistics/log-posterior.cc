@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,11 +19,11 @@
 
 #include <config.h>
 
-#include <eos/statistics/log-posterior.hh>
-#include <eos/utils/density-impl.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/statistics/log-posterior.hh>
+#include <ctg/utils/density-impl.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
 
 #include <Minuit2/FCNBase.h>
 #include <Minuit2/FunctionMinimum.h>
@@ -36,7 +36,7 @@
 
 using namespace ROOT::Minuit2;
 
-namespace eos
+namespace ctg
 {
     struct RangeError :
         public Exception
@@ -205,7 +205,7 @@ namespace eos
            }
            // store the SHA hash of the current git version
            auto attr = data_set.create_attribute("version", hdf5::Scalar<const char *>("version"));
-           attr = EOS_GITHEAD;
+           attr = ctg_GITHEAD;
        }
 
        // store constraints

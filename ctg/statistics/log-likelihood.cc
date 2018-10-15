@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2011, 2013-2018 Danny van Dyk
+ * Copyright (c) 2011, 2013-2018 
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,15 +18,15 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/log-likelihood.hh>
-#include <eos/statistics/test-statistic-impl.hh>
-#include <eos/utils/equation_solver.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/observable_cache.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/verify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/statistics/log-likelihood.hh>
+#include <ctg/statistics/test-statistic-impl.hh>
+#include <ctg/utils/equation_solver.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/observable_cache.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/verify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <algorithm>
 #include <cmath>
@@ -43,7 +43,7 @@
 #include <gsl/gsl_sf_result.h>
 #include <gsl/gsl_vector.h>
 
-namespace eos
+namespace ctg
 {
     namespace implementation
     {

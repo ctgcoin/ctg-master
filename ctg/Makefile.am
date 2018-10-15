@@ -7,41 +7,41 @@ SUBDIRS = constraints parameters utils optimize statistics form-factors rare-b-d
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeos.la
-libeos_la_SOURCES = \
+lib_LTLIBRARIES = libctg.la
+libctg_la_SOURCES = \
 	constraint.cc constraint.hh \
 	decays.hh \
 	observable.cc observable.hh \
 	signal-pdf.cc signal-pdf.hh
-libeos_la_LIBADD = \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/statistics/libeosstatistics.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
-	$(top_builddir)/eos/b-decays/libeosbdecays.la \
-	$(top_builddir)/eos/rare-b-decays/libeosrarebdecays.la
+libctg_la_LIBADD = \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/statistics/libctgstatistics.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
+	$(top_builddir)/ctg/b-decays/libctgbdecays.la \
+	$(top_builddir)/ctg/rare-b-decays/libctgrarebdecays.la
 
-include_eosdir = $(includedir)/eos
-include_eos_HEADERS = \
+include_ctgdir = $(includedir)/ctg
+include_ctg_HEADERS = \
 	constraint.hh \
 	decays.hh \
 	observable.hh \
 	signal-pdf.hh
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_CONSTRAINTS="$(top_srcdir)/eos/constraints"; \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_CONSTRAINTS="$(top_srcdir)/ctg/constraints"; \
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	constraint_TEST \
 	references_TEST
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/b-decays/libeosbdecays.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
-	$(top_builddir)/eos/rare-b-decays/libeosrarebdecays.la \
-	$(top_builddir)/eos/statistics/libeosstatistics.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/b-decays/libctgbdecays.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
+	$(top_builddir)/ctg/rare-b-decays/libctgrarebdecays.la \
+	$(top_builddir)/ctg/statistics/libctgstatistics.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = \
 	constraint_TEST \

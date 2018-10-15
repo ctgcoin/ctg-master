@@ -1,32 +1,32 @@
 CLEANFILES = \
 	*~ \
-	eos-list-references
+	ctg-list-references
 
 MAINTAINERCLEANFILES = Makefile.in
 
-if EOS_ENABLE_PYTHON
+if ctg_ENABLE_PYTHON
 
 bin_SCRIPTS = \
-	eos-list-references \
-	eos-make-constraint \
-	eos-merge-mcmc \
-	eos-plot \
-	eos-plot-1d \
-	eos-plot-2d \
-	eos-print-uncertainty
+	ctg-list-references \
+	ctg-make-constraint \
+	ctg-merge-mcmc \
+	ctg-plot \
+	ctg-plot-1d \
+	ctg-plot-2d \
+	ctg-print-uncertainty
 
 endif
 
 EXTRA_DIST = \
-	eos-list-references.in \
-	eos-make-constraint \
-	eos-merge-mcmc \
-	eos-plot \
-	eos-plot-1d \
-	eos-plot-2d \
-	eos-print-uncertainty
+	ctg-list-references.in \
+	ctg-make-constraint \
+	ctg-merge-mcmc \
+	ctg-plot \
+	ctg-plot-1d \
+	ctg-plot-2d \
+	ctg-print-uncertainty
 
-eos-list-references: eos-list-references.in Makefile
+ctg-list-references: ctg-list-references.in Makefile
 	sed \
 	    -e "s#@PKGDATADIR@#$(pkgdatadir)#g" \
 	    $< \

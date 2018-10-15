@@ -1,15 +1,15 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2017 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2017 
  * Copyright (c) 2018 Ahmet Kokulu
  * Copyright (c) 2018 Christoph Bobeth
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -19,19 +19,19 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/log.hh>
-#include <eos/utils/matrix.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/qcd.hh>
-#include <eos/utils/top-loops.hh>
-#include <eos/utils/standard-model.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/matrix.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/qcd.hh>
+#include <ctg/utils/top-loops.hh>
+#include <ctg/utils/standard-model.hh>
 
 #include <cmath>
 
 #include <gsl/gsl_sf_clausen.h>
 
-namespace eos
+namespace ctg
 {
     using std::sqrt;
 

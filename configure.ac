@@ -1,6 +1,6 @@
 dnl vim: set sw=8 sts=8 noet ft=config foldmethod=marker foldmarker={{{,}}}:
 
-AC_INIT([EOS], [0.2.1])
+AC_INIT([ctg], [0.2.1])
 AC_PREREQ(2.5)
 AC_CONFIG_SRCDIR([])
 AC_CONFIG_AUX_DIR(config)
@@ -102,9 +102,9 @@ dnl }}}
 dnl {{{ yaml-cpp
 AC_CHECK_LIB([yaml-cpp], main)
 AC_CHECK_HEADERS([yaml-cpp/yaml.h],
-        [eos_found_yaml_cpp_headers=yes; break;])
+        [ctg_found_yaml_cpp_headers=yes; break;])
 
-AS_IF([test "x$eos_found_yaml_cpp_headers" != "xyes"],
+AS_IF([test "x$ctg_found_yaml_cpp_headers" != "xyes"],
         [AC_MSG_ERROR([you do seem to be lacking 'libyaml-cpp-dev'.])])
 dnl }}}
 dnl }}}
@@ -115,7 +115,7 @@ AC_ARG_WITH([hdf5],
 	[],
 	[])
 if test "x$with_hdf5" == xno ; then
-	AC_MSG_FAILURE(["Cannot build EOS without HDF5"])
+	AC_MSG_FAILURE(["Cannot build ctg without HDF5"])
 fi
 if test "x$with_hdf5" != x -a "x$with_hdf5" != xyes ; then
 	if ! test -d "$with_hdf5" ; then
@@ -166,7 +166,7 @@ AC_ARG_WITH([gsl],
 	[],
 	[])
 if test "x$with_gsl" == xno ; then
-	AC_MSG_FAILURE(["Cannot build EOS without GSL"])
+	AC_MSG_FAILURE(["Cannot build ctg without GSL"])
 fi
 if test "x$with_gsl" != x -a "x$with_gsl" != xyes ; then
 	if ! test -d "$with_gsl" ; then
@@ -245,20 +245,20 @@ dnl }}}
 
 dnl {{{ check if we should enable PMC
 AC_ARG_ENABLE([pmc],
-	[AS_HELP_STRING([--enable-pmc], [enables usage of pmclib by EOS])],
+	[AS_HELP_STRING([--enable-pmc], [enables usage of pmclib by ctg])],
 	[],
 	[])
 if test "x$enable_pmc" == "xyes" ; then
-	AC_DEFINE([EOS_ENABLE_PMC], [1], [Define if PMC is enabled.])
+	AC_DEFINE([ctg_ENABLE_PMC], [1], [Define if PMC is enabled.])
 fi
-AM_CONDITIONAL([EOS_ENABLE_PMC], [test "x$enable_pmc" == "xyes"])
+AM_CONDITIONAL([ctg_ENABLE_PMC], [test "x$enable_pmc" == "xyes"])
 dnl }}}
 dnl {{{ check if we should enable Python
 AC_ARG_ENABLE([python],
-	[AS_HELP_STRING([--enable-python], [enables interfacing EOS within python])],
+	[AS_HELP_STRING([--enable-python], [enables interfacing ctg within python])],
 	[],
 	[])
-AM_CONDITIONAL([EOS_ENABLE_PYTHON], [test "x$enable_python" == "xyes"])
+AM_CONDITIONAL([ctg_ENABLE_PYTHON], [test "x$enable_python" == "xyes"])
 AC_ARG_WITH([boost-python-suffix],
 	[AS_HELP_STRING([--with-boost-python-suffix], [suffix used to specify the libboost-python shared object])]
 	[],
@@ -317,14 +317,14 @@ else
 	GITHEAD=$PACKAGE_VERSION
 fi
 AC_SUBST([GITHEAD])
-AC_DEFINE_UNQUOTED([EOS_GITHEAD], "$GITHEAD", [GIT revision of the sources])
+AC_DEFINE_UNQUOTED([ctg_GITHEAD], "$GITHEAD", [GIT revision of the sources])
 dnl }}}
 
-dnl {{{ define relevant EOS_* macros
-AC_DEFINE_UNQUOTED([EOS_BUILDDIR], "$ac_pwd", [Absolute path to the build directory])
-AC_DEFINE_UNQUOTED([EOS_SRCDIR], "$ac_abs_confdir", [Absolute path to the top-level source directory])
+dnl {{{ define relevant ctg_* macros
+AC_DEFINE_UNQUOTED([ctg_BUILDDIR], "$ac_pwd", [Absolute path to the build directory])
+AC_DEFINE_UNQUOTED([ctg_SRCDIR], "$ac_abs_confdir", [Absolute path to the top-level source directory])
 eval ac_datadir=`eval x=$datadir ; echo $x`
-AC_DEFINE_UNQUOTED([EOS_DATADIR], "$ac_datadir", [Absolute path to the installation data directory])
+AC_DEFINE_UNQUOTED([ctg_DATADIR], "$ac_datadir", [Absolute path to the installation data directory])
 dnl }}}
 
 dnl {{{ output
@@ -337,15 +337,15 @@ AC_OUTPUT(
 	debian/control-xenial
 	debian/Makefile
 	doc/Makefile
-	eos/Makefile
-	eos/constraints/Makefile
-	eos/form-factors/Makefile
-	eos/rare-b-decays/Makefile
-	eos/b-decays/Makefile
-	eos/parameters/Makefile
-	eos/utils/Makefile
-	eos/optimize/Makefile
-	eos/statistics/Makefile
+	ctg/Makefile
+	ctg/constraints/Makefile
+	ctg/form-factors/Makefile
+	ctg/rare-b-decays/Makefile
+	ctg/b-decays/Makefile
+	ctg/parameters/Makefile
+	ctg/utils/Makefile
+	ctg/optimize/Makefile
+	ctg/statistics/Makefile
 	manual/Makefile
 	manual/appendices/Makefile
 	manual/figures/Makefile

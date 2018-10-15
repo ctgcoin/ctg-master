@@ -1,7 +1,7 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#include <eos/utils/complex.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/utils/complex.hh>
+#include <ctg/utils/power_of.hh>
 
 #include <array>
 #include <cmath>
@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-namespace eos
+namespace ctg
 {
     static const int max_iterations = 54;
 

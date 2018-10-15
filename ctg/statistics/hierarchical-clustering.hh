@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2012 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,18 +17,18 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_STATISTICS_HIERARCHICAL_CLUSTERING_HH
-#define EOS_GUARD_SRC_STATISTICS_HIERARCHICAL_CLUSTERING_HH 1
+#ifndef ctg_GUARD_SRC_STATISTICS_HIERARCHICAL_CLUSTERING_HH
+#define ctg_GUARD_SRC_STATISTICS_HIERARCHICAL_CLUSTERING_HH 1
 
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
-#include <eos/utils/private_implementation_pattern.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/utils/private_implementation_pattern.hh>
 
 #include <vector>
 
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_vector.h>
 
-namespace eos
+namespace ctg
 {
     /*!
      * Implement the hierarchical clustering explained in [GR2004].

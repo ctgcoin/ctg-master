@@ -1,4 +1,4 @@
-eos-sample-mcmc \
+ctg-sample-mcmc \
     --global-option model CKMScan \
     --global-option form-factors BCL2008 \
     --scan "CKM::abs(V_ub)"          2e-3   5e-3  --prior flat \

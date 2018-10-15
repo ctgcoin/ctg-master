@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2013, 2015 Danny van Dyk
+ * Copyright (c) 2010, 2013, 2015 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,15 +17,15 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/rare-b-decays/bremsstrahlung.hh>
-#include <eos/utils/integrate.hh>
-#include <eos/utils/polylog.hh>
+#include <ctg/rare-b-decays/bremsstrahlung.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/polylog.hh>
 
 #include <cmath>
 #include <limits>
 #include <functional>
 
-namespace eos
+namespace ctg
 {
     // cf. [AAGW2002], Eq. (30), p. 12
     complex<double>

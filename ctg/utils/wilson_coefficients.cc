@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011 Danny van Dyk
+ * Copyright (c) 2010, 2011 
  * Copyright (c) 2010 Christoph Bobeth
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,17 +18,17 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/matrix.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/qcd.hh>
-#include <eos/utils/wilson_coefficients.hh>
+#include <ctg/utils/matrix.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/qcd.hh>
+#include <ctg/utils/wilson_coefficients.hh>
 
 #include <array>
 #include <cmath>
 #include <vector>
 
-namespace eos
+namespace ctg
 {
     WilsonCoefficients<BToS>::WilsonCoefficients() :
         _alpha_s(0.0)

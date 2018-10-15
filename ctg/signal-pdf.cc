@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2015, 2016, 2017 Danny van Dyk
+ * Copyright (c) 2015, 2016, 2017 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,24 +17,24 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/signal-pdf.hh>
-#include <eos/b-decays/b-to-d-l-nu.hh>
-#include <eos/b-decays/b-to-d-l-x-nu.hh>
-#include <eos/b-decays/b-to-pi-l-x-nu.hh>
-#include <eos/b-decays/b-to-pi-pi-l-nu.hh>
-#include <eos/b-decays/bs-to-kstar-l-nu.hh>
-#include <eos/b-decays/lambdab-to-lambdac2625-l-nu.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-dilepton-large-recoil.hh>
-#include <eos/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
-#include <eos/utils/concrete-signal-pdf.hh>
-#include <eos/utils/density.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/signal-pdf.hh>
+#include <ctg/b-decays/b-to-d-l-nu.hh>
+#include <ctg/b-decays/b-to-d-l-x-nu.hh>
+#include <ctg/b-decays/b-to-pi-l-x-nu.hh>
+#include <ctg/b-decays/b-to-pi-pi-l-nu.hh>
+#include <ctg/b-decays/bs-to-kstar-l-nu.hh>
+#include <ctg/b-decays/lambdab-to-lambdac2625-l-nu.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-dilepton-large-recoil.hh>
+#include <ctg/rare-b-decays/exclusive-b-to-s-dilepton-low-recoil.hh>
+#include <ctg/utils/concrete-signal-pdf.hh>
+#include <ctg/utils/density.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <map>
 #include <ostream>
 
-namespace eos
+namespace ctg
 {
     namespace test
     {

@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#ifndef EOS_GUARD_SRC_CLIENTS_CLI_ERROR_HH
-#define EOS_GUARD_SRC_CLIENTS_CLI_ERROR_HH 1
+#ifndef ctg_GUARD_SRC_CLIENTS_CLI_ERROR_HH
+#define ctg_GUARD_SRC_CLIENTS_CLI_ERROR_HH 1
 
-#include <eos/utils/exception.hh>
+#include <ctg/utils/exception.hh>
 
 #include <string>
 
-namespace eos
+namespace ctg
 {
     namespace cli
     {
@@ -15,7 +15,7 @@ namespace eos
          * Thrown if an invalid command line argument is provided.
          */
         class Error :
-            public eos::Exception
+            public ctg::Exception
         {
             protected:
                 /**

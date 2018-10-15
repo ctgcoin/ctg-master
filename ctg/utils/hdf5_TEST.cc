@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2011 Danny van Dyk
+ * Copyright (c) 2011 
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -20,10 +20,10 @@
 
 #include <config.h>
 #include <test/test.hh>
-#include <eos/utils/hdf5.hh>
+#include <ctg/utils/hdf5.hh>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class HDF5FileTest :
     public TestCase
@@ -36,7 +36,7 @@ class HDF5FileTest :
 
         virtual void run() const
         {
-            static const std::string filename(EOS_BUILDDIR "/eos/utils/hdf5_TEST-file.hdf5");
+            static const std::string filename(ctg_BUILDDIR "/ctg/utils/hdf5_TEST-file.hdf5");
 
             std::remove(filename.c_str());
 
@@ -109,7 +109,7 @@ class HDF5FileTest :
             {
                 hdf5::File file = hdf5::File::Open(filename, H5F_ACC_RDONLY);
 
-                static const std::string filename_copy(EOS_BUILDDIR "/eos/utils/hdf5_TEST-copy.hdf5");
+                static const std::string filename_copy(ctg_BUILDDIR "/ctg/utils/hdf5_TEST-copy.hdf5");
 
                 hdf5::File file_copy = hdf5::File::Create(filename_copy);
 
@@ -142,7 +142,7 @@ class HDF5AttributeTest:
 
         virtual void run() const
         {
-            static const std::string filename(EOS_BUILDDIR "/eos/utils/hdf5_TEST-attribute.hdf5");
+            static const std::string filename(ctg_BUILDDIR "/ctg/utils/hdf5_TEST-attribute.hdf5");
             std::remove(filename.c_str());
 
             hdf5::Composite<hdf5::Scalar<double>, hdf5::Array<1, double>> record_type

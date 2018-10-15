@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011, 2012 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,17 +17,17 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/log-prior.hh>
-#include <eos/statistics/prior-sampler.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/memoise.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/thread_pool.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/statistics/prior-sampler.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/memoise.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/thread_pool.hh>
 
 #include <gsl/gsl_randist.h>
 
-namespace eos
+namespace ctg
 {
     namespace
     {
@@ -246,7 +246,7 @@ namespace eos
             for (auto d = prior->begin(), d_end = prior->end() ; d != d_end ; ++d, ++counter)
             {
                 if (counter > 0)
-                    throw InternalError("PriorSampler::add(): eos is not ready for multidimensional priors.");
+                    throw InternalError("PriorSampler::add(): ctg is not ready for multidimensional priors.");
                 auto result = parameter_names.insert(d->parameter->name());
                 if ( ! result.second)
                     return false;

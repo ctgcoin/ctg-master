@@ -1,17 +1,17 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2016, 2017 Danny van Dyk
+ * Copyright (c) 2016, 2017 
  *
  * Copied from the Paludis package manager, which is
  * Copyright (c) 2005-2011 Ciaran McCreesh
  * Copyright (c) 2006 Stephen Bennett
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -21,22 +21,22 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_SRC_CLIENTS_CLI_OPTION_HH
-#define EOS_GUARD_SRC_CLIENTS_CLI_OPTION_HH 1
+#ifndef ctg_GUARD_SRC_CLIENTS_CLI_OPTION_HH
+#define ctg_GUARD_SRC_CLIENTS_CLI_OPTION_HH 1
 
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/named-value.hh>
-#include <eos/utils/parameters.hh>
-#include <eos/utils/private_implementation_pattern.hh>
-#include <eos/utils/type-list.hh>
-#include <eos/utils/visitor.hh>
-#include <eos/utils/wrapped_forward_iterator.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/named-value.hh>
+#include <ctg/utils/parameters.hh>
+#include <ctg/utils/private_implementation_pattern.hh>
+#include <ctg/utils/type-list.hh>
+#include <ctg/utils/visitor.hh>
+#include <ctg/utils/wrapped_forward_iterator.hh>
 
 #include <memory>
 #include <vector>
 
-namespace eos
+namespace ctg
 {
     namespace n
     {
@@ -59,7 +59,7 @@ namespace eos
         class StringListArg;
         class SwitchArg;
 
-        // EOS specific args
+        // ctg specific args
         class KinematicsSingleVariableArg;
         class KinematicsVariableRangeArg;
         class ObservableArg;
@@ -538,7 +538,7 @@ namespace eos
         };
 
         /**
-         * The '--kinematic-variable' EOS-specific command line argument.
+         * The '--kinematic-variable' ctg-specific command line argument.
          */
         class KinematicVariableArg :
             public KeyValueArg
@@ -569,7 +569,7 @@ namespace eos
         };
 
         /**
-         * The '--parameter-budget' EOS-specific command line argument.
+         * The '--parameter-budget' ctg-specific command line argument.
          */
         class ParameterBudgetArg :
             public StringArg

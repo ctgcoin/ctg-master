@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 Danny van Dyk
+ * Copyright (c) 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 
  * Copyright (c) 2010 Christian Wacker
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -20,11 +20,11 @@
 
 #include <config.h>
 
-#include <eos/utils/log.hh>
-#include <eos/utils/parameters.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/stringify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/parameters.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/stringify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <cmath>
 #include <map>
@@ -39,7 +39,7 @@
 
 namespace fs = boost::filesystem;
 
-namespace eos
+namespace ctg
 {
     bool
     operator== (const ParameterDescription & lhs, const ParameterDescription & rhs)
@@ -220,19 +220,19 @@ namespace eos
         load_defaults()
         {
             fs::path base;
-            if (std::getenv("EOS_TESTS_PARAMETERS"))
+            if (std::getenv("ctg_TESTS_PARAMETERS"))
             {
-                std::string envvar = std::string(std::getenv("EOS_TESTS_PARAMETERS"));
+                std::string envvar = std::string(std::getenv("ctg_TESTS_PARAMETERS"));
                 base = fs::system_complete(envvar);
             }
-            else if (std::getenv("EOS_HOME"))
+            else if (std::getenv("ctg_HOME"))
             {
-                std::string envvar = std::string(std::getenv("EOS_HOME"));
+                std::string envvar = std::string(std::getenv("ctg_HOME"));
                 base = fs::system_complete(envvar) / "parameters";
             }
             else
             {
-                base = fs::system_complete(EOS_DATADIR "/eos/parameters/");
+                base = fs::system_complete(ctg_DATADIR "/ctg/parameters/");
             }
 
             if (! fs::exists(base))

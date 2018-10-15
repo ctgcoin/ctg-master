@@ -5,7 +5,7 @@ MAINTAINERCLEANFILES = Makefile.in
 
 SUBDIRS = .
 
-YAMLTEXSOURCES := $(foreach f,$(wildcard $(top_srcdir)/eos/parameters/*.yaml),parameters-$(notdir $f).tex)
+YAMLTEXSOURCES := $(foreach f,$(wildcard $(top_srcdir)/ctg/parameters/*.yaml),parameters-$(notdir $f).tex)
 TEXSOURCES = \
 	parameters.tex.in
 
@@ -15,7 +15,7 @@ SOURCES = \
 
 manual-am: parameters.tex
 
-parameters-%.yaml.tex: $(top_srcdir)/eos/parameters/%.yaml parameters-to-latex.py
+parameters-%.yaml.tex: $(top_srcdir)/ctg/parameters/%.yaml parameters-to-latex.py
 	./parameters-to-latex.py $< > $@
 
 parameters.tex: $(SOURCES) parameters-to-latex.py

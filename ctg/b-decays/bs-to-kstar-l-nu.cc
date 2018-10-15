@@ -1,16 +1,16 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2013, 2014, 2015, 2016 Danny van Dyk
+ * Copyright (c) 2013, 2014, 2015, 2016 
  * Copyright (c) 2013 Bastian Müller
  * Copyright (c) 2018 Ahmet Kokulu
  * Copyright (c) 2018 Christoph Bobeth
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -20,26 +20,26 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/b-decays/b-to-l-nu.hh>
-#include <eos/b-decays/b-to-pi-l-nu.hh>
-#include <eos/b-decays/b-to-v-l-nu.hh>
-#include <eos/b-decays/bs-to-kstar-l-nu.hh>
-#include <eos/form-factors/form-factors.hh>
-#include <eos/utils/destringify.hh>
-#include <eos/utils/integrate-impl.hh>
-#include <eos/utils/kinematic.hh>
-#include <eos/utils/model.hh>
-#include <eos/utils/options.hh>
-#include <eos/utils/options-impl.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
+#include <ctg/b-decays/b-to-l-nu.hh>
+#include <ctg/b-decays/b-to-pi-l-nu.hh>
+#include <ctg/b-decays/b-to-v-l-nu.hh>
+#include <ctg/b-decays/bs-to-kstar-l-nu.hh>
+#include <ctg/form-factors/form-factors.hh>
+#include <ctg/utils/destringify.hh>
+#include <ctg/utils/integrate-impl.hh>
+#include <ctg/utils/kinematic.hh>
+#include <ctg/utils/model.hh>
+#include <ctg/utils/options.hh>
+#include <ctg/utils/options-impl.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
 
 #include <cmath>
 #include <functional>
 
-namespace eos
+namespace ctg
 {
-    using namespace eos::btovlnu;
+    using namespace ctg::btovlnu;
     using std::norm;
 
     /*

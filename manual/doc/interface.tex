@@ -3,7 +3,7 @@
 \chapter{Library Interface}
 \label{ch:interface}
 
-The rationale behind several of the design decisions of the \EOS libraries are
+The rationale behind several of the design decisions of the \ctg libraries are
 explained in \refsec{interface:design}. We document the core set of \cpp
 classes in \refsec{interface:classes}.
 
@@ -11,7 +11,7 @@ classes in \refsec{interface:classes}.
 \section{Design}
 \label{sec:interface:design}
 
-To fulfill its intended use cases, the \EOS libraries are designed by abiding
+To fulfill its intended use cases, the \ctg libraries are designed by abiding
 to the follwing principles.\\
 
 First, scalar quantities are treated as parameters.
@@ -59,9 +59,9 @@ parametrization of this form factor has been proposed in \cite{Bourrely:2008za}
     \item the normalization $f^{B\pi}_+(0)$, and
     \item two shape parameters $b^{B\pi,+}_1$ and $b^{B\pi,+}_2$.
 \end{itemize}
-This parametrization is implemented within \EOS as one of several options for
+This parametrization is implemented within \ctg as one of several options for
 a $B\to \pi$ form factor parametrization.
-The relevant \EOS parameters are contained in the
+The relevant \ctg parameters are contained in the
 namespace \texttt{B->pi}, and tagged for the \text{BCL2008} plugin:
 \begin{equation}
     \texttt{B->pi::f\_+(0)\@BCL2008}\,,\quad\texttt{B->pi::b\_+\^{}1\@BCL2008}\,,
@@ -81,16 +81,16 @@ another object that points to the same underlying data. This is achieved through
 extensive use of the \emph{Private Implementation} design pattern.\footnote{%
     See \url{https://cpppatterns.com/patterns/pimpl.html}.
 }
-To make an independent copy, the \EOS classes provide the \cpp{clone()} method.
+To make an independent copy, the \ctg classes provide the \cpp{clone()} method.
 
 
 \section{Core Classes}
 \label{sec:interface:classes}
 
-At the core of the EOS API there are four classes:
+At the core of the ctg API there are four classes:
 \begin{description}[leftmargin=!,labelwidth=.15\textwidth]
     \item[\class{Parameters}]
-        which contains the whole set of \class{Parameter} known to EOS
+        which contains the whole set of \class{Parameter} known to ctg
     \item[\class{Kinematics}]
         which contains the set of kinematic variables specific to one
         instance of \class{Observable}
@@ -105,7 +105,7 @@ At the core of the EOS API there are four classes:
 \subsection{Class \class{Parameters}}
 
 Implemented as a dictionary, with keys of type \cpp{std:string} and values of type
-\cpp{Parameter}. The default set of parameters is loaded from the \EOS-supplied YAML files. It can be
+\cpp{Parameter}. The default set of parameters is loaded from the \ctg-supplied YAML files. It can be
 loaded by using the static \cpp{Parameters::Defaults()} method. Using the copy construtor does not yield
 an independent copy; instead the second object uses the underlying data of the initial
 instance. To obtain an independent copy with the same values as the present one, use
@@ -168,10 +168,10 @@ you must use the static \class{Observable::make()} factory method. It requires t
     \item an \cpp{class Options} object \cpp{o}.
 \end{itemize}
 
-To allow for more compact code, \EOS' internal observables are not implemented as individual
+To allow for more compact code, \ctg' internal observables are not implemented as individual
 classes. Instead, related observables are bundled together into one class. Individual observable
 classes are then created using the \cpp{template <...> class ConcreteObservable}. We refer to
-\refsec{extending:observable} for details on how to extend \EOS with the implementation
+\refsec{extending:observable} for details on how to extend \ctg with the implementation
 of a new observable.\\
 
 

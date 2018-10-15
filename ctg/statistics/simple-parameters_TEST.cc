@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2013 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -16,10 +16,10 @@
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
-#include <eos/statistics/simple-parameters.hh>
+#include <ctg/statistics/simple-parameters.hh>
 #include <test/test.hh>
 
-using namespace eos;
+using namespace ctg;
 using namespace test;
 
 class SimpleParametersTest :

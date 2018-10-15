@@ -57,9 +57,9 @@
 %%
 %% Metadata
 %%
-\title{EOS --- A HEP\\ Program for Flavor Physics}
+\title{ctg --- A HEP\\ Program for Flavor Physics}
 \subtitle{User Manual}
-\author{Danny van Dyk \\ Christoph Bobeth \and Frederik Beaujean}
+\author{ \\ Christoph Bobeth \and Frederik Beaujean}
 
 %% Add the bibliography
 \addbibresource{references.bib}
@@ -79,7 +79,7 @@
 
 %% Title
 \rule{\linewidth}{0.5mm}\\[0.4cm]
-{\includegraphics[scale=0.5]{eos-logo-160x90.png} \\[0.4cm] }
+{\includegraphics[scale=0.5]{ctg-logo-160x90.png} \\[0.4cm] }
 {\huge \rmfamily \bfseries \@title \\[0.4cm] }
 {\large \rmfamily \bfseries \@subtitle \\[0.4cm] }
 \rule{\linewidth}{0.5mm}\\[1.5cm]
@@ -92,7 +92,7 @@
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 \begin{flushright} \large
-\rmfamily version @EOS_VERSION@
+\rmfamily version @ctg_VERSION@
 \end{flushright}
 \end{minipage}
 

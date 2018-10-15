@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2016 Danny van Dyk
+ * Copyright (c) 2016 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,15 +18,15 @@
  */
 
 #include <test/test.hh>
-#include <eos/observable.hh>
-#include <eos/b-decays/b-to-pi-pi-l-nu.hh>
-#include <eos/utils/complex.hh>
-#include <eos/utils/wilson-polynomial.hh>
+#include <ctg/observable.hh>
+#include <ctg/b-decays/b-to-pi-pi-l-nu.hh>
+#include <ctg/utils/complex.hh>
+#include <ctg/utils/wilson-polynomial.hh>
 
 #include <limits>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 class BToPiPiLeptonNeutrinoTest :
     public TestCase

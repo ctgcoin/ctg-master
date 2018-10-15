@@ -3,8 +3,8 @@ MAINTAINERCLEANFILES = Makefile.in
 
 AM_CXXFLAGS = @AM_CXXFLAGS@
 
-lib_LTLIBRARIES = libeosrarebdecays.la
-libeosrarebdecays_la_SOURCES = \
+lib_LTLIBRARIES = libctgrarebdecays.la
+libctgrarebdecays_la_SOURCES = \
 	bremsstrahlung.cc bremsstrahlung.hh \
 	charm-loops.cc charm-loops.hh \
 	em-contributions.hh em-contributions.cc \
@@ -19,15 +19,15 @@ libeosrarebdecays_la_SOURCES = \
 	long-distance.cc long-distance.hh \
 	lambda-b-to-lambda-dilepton.cc lambda-b-to-lambda-dilepton.hh \
 	qcdf_integrals.cc qcdf_integrals.hh
-libeosrarebdecays_la_LIBADD = \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/form-factors/libeosformfactors.la \
+libctgrarebdecays_la_LIBADD = \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/form-factors/libctgformfactors.la \
 	-lboost_filesystem -lboost_system \
 	-lgsl -lgslcblas -lm \
 	-lyaml-cpp
 
-include_eos_rarebdecaysdir = $(includedir)/eos/rare-b-decays
-include_eos_rarebdecays_HEADERS = \
+include_ctg_rarebdecaysdir = $(includedir)/ctg/rare-b-decays
+include_ctg_rarebdecays_HEADERS = \
 	bremsstrahlung.hh \
 	charm-loops.hh \
 	em-contributions.hh \
@@ -49,7 +49,7 @@ EXTRA_DIST = \
 	exclusive-b-to-s-gamma_TEST-btokstargamma.data
 
 AM_TESTS_ENVIRONMENT = \
-	export EOS_TESTS_PARAMETERS="$(top_srcdir)/eos/parameters";
+	export ctg_TESTS_PARAMETERS="$(top_srcdir)/ctg/parameters";
 
 TESTS = \
 	bremsstrahlung_TEST \
@@ -68,10 +68,10 @@ TESTS = \
 XFAIL_TESTS = \
 	exclusive-b-to-s-dilepton-large-recoil_TEST # One of the QCDF integrals has a bug in the imaginary part
 LDADD = \
-	$(top_builddir)/test/libeostest.a \
-	libeosrarebdecays.la \
-	$(top_builddir)/eos/utils/libeosutils.la \
-	$(top_builddir)/eos/libeos.la
+	$(top_builddir)/test/libctgtest.a \
+	libctgrarebdecays.la \
+	$(top_builddir)/ctg/utils/libctgutils.la \
+	$(top_builddir)/ctg/libctg.la
 
 check_PROGRAMS = $(TESTS)
 bremsstrahlung_TEST_SOURCES = bremsstrahlung_TEST.cc

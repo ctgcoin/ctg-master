@@ -1,4 +1,4 @@
-eos-propagate-uncertainty \
+ctg-propagate-uncertainty \
     --global-option model CKMScan \
     --global-option form-factors BCL2008 \
     --vary "CKM::abs(V_ub)"          2e-3   5e-3  --prior gaussian 4.19e-3 4.45e-3 4.71e-3 \

@@ -1,14 +1,14 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2010, 2011 Danny van Dyk
+ * Copyright (c) 2010, 2011 
  * Copyright (c) 2018 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,8 +18,8 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/utils/integrate.hh>
-#include <eos/utils/matrix.hh>
+#include <ctg/utils/integrate.hh>
+#include <ctg/utils/matrix.hh>
 
 #include <gsl/gsl_errno.h>
 
@@ -30,12 +30,12 @@ namespace
 {
     double gsl_function_adapter(double x, void *params)
     {
-        const auto& f = *static_cast<eos::GSL::fdd*>(params);
+        const auto& f = *static_cast<ctg::GSL::fdd*>(params);
         return f(x);
     }
 }
 
-namespace eos
+namespace ctg
 {
     using std::abs;
     using std::real;

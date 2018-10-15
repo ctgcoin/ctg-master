@@ -1,6 +1,6 @@
 %\chapter{Effective Field Theory}
 %
-%EOS uses various Effective Field Theories (EFTs) below the electroweak scale to
+%ctg uses various Effective Field Theories (EFTs) below the electroweak scale to
 %parametrize the effects of the Standard Model (SM) or New Physics (NP) in flavour-changing
 %decays. The relevant EFTs for $b\to s\ell\ell$ decays, and for $b\to \lbrace u, c\rbrace \ell\nu$
 %decays are documented in the following.
@@ -52,7 +52,7 @@ $m_b^2/m_W^2 \sim 0.004$, where $m_b$ denotes the bottom-quark mass.
 The EFT framework is sufficient to describe interactions at and below the scale
 $\mu_\text{low}$, including hadronic binding effects due to strong interactions
 as well as electro-magnetic virtual and real corrections to observables. The
-implementation of according observables in EOS is thus based on universal EFT 
+implementation of according observables in ctg is thus based on universal EFT 
 Lagrangians. All respective short-distance interactions above $\mu_\text{low}$ are
 fixed by the structure of the operators and the values of the Wilson coefficients.
 In the spirit of Fermi, the according Wilson coefficients can be viewed as unknowns
@@ -77,7 +77,7 @@ their respective RG-functions (beta-functions). Throughout Wilson coefficients
 and couplings are $\overline{\text{MS}}$-renormalized quantities.
 
 In the following we collect the conventions of the effective theories implemented
-in EOS for hadron decays based on quark transitions
+in ctg for hadron decays based on quark transitions
 \begin{align}
   b & \to (d,\, s), & \ldots
 \end{align}
@@ -276,11 +276,11 @@ The full basis of semi-leptonic operators is spanned by $\op{9,10}$ as above, an
                       (\bar{\ell} \sigma^{\mu\nu} \gamma_5 \ell) \,.
 \end{align}
 For studies of NP effects in these operators the values of the respective Wilson coefficients
-can be changed within the EOS code at run time. For the changed to take effect, the observables
+can be changed within the ctg code at run time. For the changed to take effect, the observables
 must be constructed with the option \option{model} set to \texttt{WilsonScan}. In that case, the
 coefficients $\wilson{i}$ with $i\in \lbrace 7,7',9,9',10,10',S,S',P,P',T,T5\rbrace$ are treated
 as complex-valued parameters.
-Since EOS parameters are real-valued only, this implies that real and
+Since ctg parameters are real-valued only, this implies that real and
 imaginary part of these coefficients can be adjusted separately.
 The coefficients $\wilson{j}{U}$ with $j=\lbrace 1,2\rbrace$ are presently
 $U$-flavour-universal, and are simply considered as two independent coefficients $\wilson{j}$.

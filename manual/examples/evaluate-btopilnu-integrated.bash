@@ -1,4 +1,4 @@
-eos-evaluate \
+ctg-evaluate \
     --kinematics s_min  0.0 \
     --kinematics s_max 12.0 \
     --observable "B->pilnu::BR;l=mu,form-factors=BCL2008" \

@@ -2,13 +2,13 @@
 
 /*
  * Copyright (c) 2011 Frederik Beaujean
- * Copyright (c) 2011, 2013 Danny van Dyk
+ * Copyright (c) 2011, 2013 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -20,14 +20,14 @@
 
 #include <config.h>
 
-#include <eos/statistics/log-posterior.hh>
-#include <eos/statistics/markov-chain-sampler.hh>
-#include <eos/statistics/rvalue.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/thread_pool.hh>
+#include <ctg/statistics/log-posterior.hh>
+#include <ctg/statistics/markov-chain-sampler.hh>
+#include <ctg/statistics/rvalue.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/thread_pool.hh>
 
 #include <Minuit2/FunctionMinimum.h>
 #include <Minuit2/MnPrint.h>
@@ -37,7 +37,7 @@
 #include <limits>
 #include <sys/stat.h>
 
-namespace eos
+namespace ctg
 {
     template<>
     struct Implementation<MarkovChainSampler>

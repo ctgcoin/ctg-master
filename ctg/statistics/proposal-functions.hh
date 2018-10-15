@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,19 +17,19 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_EOS_UTILS_PROPROSAL_FUNCTIONS_HH
-#define EOS_GUARD_EOS_UTILS_PROPROSAL_FUNCTIONS_HH 1
+#ifndef ctg_GUARD_ctg_UTILS_PROPROSAL_FUNCTIONS_HH
+#define ctg_GUARD_ctg_UTILS_PROPROSAL_FUNCTIONS_HH 1
 
-#include <eos/statistics/chain-group.hh>
-#include <eos/statistics/log-prior-fwd.hh>
-#include <eos/statistics/markov-chain.hh>
-#include <eos/utils/hdf5-fwd.hh>
-#include <eos/utils/verify.hh>
+#include <ctg/statistics/chain-group.hh>
+#include <ctg/statistics/log-prior-fwd.hh>
+#include <ctg/statistics/markov-chain.hh>
+#include <ctg/utils/hdf5-fwd.hh>
+#include <ctg/utils/verify.hh>
 
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_vector.h>
 
-namespace eos
+namespace ctg
 {
     namespace proposal_functions
     {

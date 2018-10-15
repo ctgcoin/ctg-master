@@ -2,13 +2,13 @@
 
 /*
  * Copyright (c) 2011 Frederik Beaujean
- * Copyright (c) 2011, 2013 Danny van Dyk
+ * Copyright (c) 2011, 2013 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -18,13 +18,13 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/proposal-functions.hh>
-#include <eos/statistics/histogram.hh>
-#include <eos/statistics/log-prior.hh>
-#include <eos/statistics/rvalue.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/statistics/proposal-functions.hh>
+#include <ctg/statistics/histogram.hh>
+#include <ctg/statistics/log-prior.hh>
+#include <ctg/statistics/rvalue.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/power_of.hh>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_linalg.h>
@@ -39,7 +39,7 @@
 #include <map>
 #include <numeric>
 
-namespace eos
+namespace ctg
 {
     namespace proposal_functions
     {

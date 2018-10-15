@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#ifndef EOS_GUARD_EOS_UTILS_CHAIN_GROUP_HH
-#define EOS_GUARD_EOS_UTILS_CHAIN_GROUP_HH 1
+#ifndef ctg_GUARD_ctg_UTILS_CHAIN_GROUP_HH
+#define ctg_GUARD_ctg_UTILS_CHAIN_GROUP_HH 1
 
-#include <eos/statistics/markov-chain.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/statistics/markov-chain.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
-namespace eos
+namespace ctg
 {
     class ChainGroup :
         public PrivateImplementationPattern<ChainGroup>

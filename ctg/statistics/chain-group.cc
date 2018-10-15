@@ -1,17 +1,17 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#include <eos/statistics/chain-group.hh>
-#include <eos/utils/log.hh>
-#include <eos/utils/private_implementation_pattern-impl.hh>
-#include <eos/utils/verify.hh>
-#include <eos/utils/wrapped_forward_iterator-impl.hh>
+#include <ctg/statistics/chain-group.hh>
+#include <ctg/utils/log.hh>
+#include <ctg/utils/private_implementation_pattern-impl.hh>
+#include <ctg/utils/verify.hh>
+#include <ctg/utils/wrapped_forward_iterator-impl.hh>
 
 #include <algorithm>
 #include <cmath>
 #include <numeric>
 #include <vector>
 
-namespace eos
+namespace ctg
 {
     template <> struct Implementation<ChainGroup>
     {

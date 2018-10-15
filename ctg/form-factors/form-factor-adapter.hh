@@ -1,13 +1,13 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
 /*
- * Copyright (c) 2013, 2016, 2017 Danny van Dyk
+ * Copyright (c) 2013, 2016, 2017 
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,15 +17,15 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef EOS_GUARD_EOS_FORM_FACTORS_FORM_FACTOR_ADAPTER_HH
-#define EOS_GUARD_EOS_FORM_FACTORS_FORM_FACTOR_ADAPTER_HH 1
+#ifndef ctg_GUARD_ctg_FORM_FACTORS_FORM_FACTOR_ADAPTER_HH
+#define ctg_GUARD_ctg_FORM_FACTORS_FORM_FACTOR_ADAPTER_HH 1
 
-#include <eos/observable.hh>
-#include <eos/form-factors/form-factors.hh>
-#include <eos/utils/apply.hh>
-#include <eos/utils/tuple-maker.hh>
+#include <ctg/observable.hh>
+#include <ctg/form-factors/form-factors.hh>
+#include <ctg/utils/apply.hh>
+#include <ctg/utils/tuple-maker.hh>
 
-namespace eos
+namespace ctg
 {
     /* Form factor adapter class for interfacing Observable */
     template <typename Transition_, typename ... Args_>

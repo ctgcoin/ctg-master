@@ -1,11 +1,11 @@
 /* vim: set sw=4 sts=4 et foldmethod=syntax : */
 
-#ifndef EOS_GUARD_EOS_UTILS_VISITOR_FWD_HH
-#define EOS_GUARD_EOS_UTILS_VISITOR_FWD_HH 1
+#ifndef ctg_GUARD_ctg_UTILS_VISITOR_FWD_HH
+#define ctg_GUARD_ctg_UTILS_VISITOR_FWD_HH 1
 
-#include <eos/utils/type-list-fwd.hh>
+#include <ctg/utils/type-list-fwd.hh>
 
-namespace eos
+namespace ctg
 {
     template <typename TypeList_>
     class DeclareAbstractVisitMethods;

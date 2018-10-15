@@ -3,11 +3,11 @@
 /*
  * Copyright (c) 2010, 2011 Frederik Beaujean
  *
- * This file is part of the EOS project. EOS is free software;
+ * This file is part of the ctg project. ctg is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General
  * Public License version 2, as published by the Free Software Foundation.
  *
- * EOS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ctg is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  * details.
@@ -17,18 +17,18 @@
  * Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <eos/statistics/markov-chain-sampler.hh>
+#include <ctg/statistics/markov-chain-sampler.hh>
 
 #include <test/test.hh>
-#include <eos/statistics/density-wrapper_TEST.hh>
-#include <eos/statistics/histogram.hh>
-#include <eos/statistics/log-posterior_TEST.hh>
-#include <eos/statistics/proposal-functions.hh>
-#include <eos/utils/hdf5.hh>
-#include <eos/utils/power_of.hh>
+#include <ctg/statistics/density-wrapper_TEST.hh>
+#include <ctg/statistics/histogram.hh>
+#include <ctg/statistics/log-posterior_TEST.hh>
+#include <ctg/statistics/proposal-functions.hh>
+#include <ctg/utils/hdf5.hh>
+#include <ctg/utils/power_of.hh>
 
 using namespace test;
-using namespace eos;
+using namespace ctg;
 
 template <typename T_>
 void bin_data_set(hdf5::DataSet<T_ > & data_set, Histogram<1> & hist, const unsigned & dimension,
@@ -77,7 +77,7 @@ class MarkovChainSamplerTest :
                 config.chunk_size = 5000;
                 config.chunks = 10;
                 config.number_of_chains = 2;
-                config.output_file = EOS_BUILDDIR "/eos/statistics/markov-chain-sampler_TEST_density.hdf5";
+                config.output_file = ctg_BUILDDIR "/ctg/statistics/markov-chain-sampler_TEST_density.hdf5";
                 config.parallelize = false;
                 config.seed = 1246122;
                 MarkovChainSampler sampler(density.clone(), config);
@@ -86,7 +86,7 @@ class MarkovChainSamplerTest :
 
             // check pre run, main run and HDF5 storage
             {
-                static const std::string file_name(EOS_BUILDDIR "/eos/statistics/markov-chain-sampler_TEST.hdf5");
+                static const std::string file_name(ctg_BUILDDIR "/ctg/statistics/markov-chain-sampler_TEST.hdf5");
                 std::remove(file_name.c_str());
 
                 // store to HDF5
