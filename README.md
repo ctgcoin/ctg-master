@@ -101,4 +101,70 @@ In other words, if you own EOS tokens, you will acquire corresponding resources 
 From the design and architecture of EOS, it is aimed at building a free, secure, easy-to-use, high-performance and well-compatible underlying system with public chains, which can meet the demands of commercial application. If these concepts are realized, a flood of projects and application development will be attracted and a new round of climax may be brought to the investment of blockchain. EOS is the most suitable choice of architecture for CTG so far.
 
 
+3.Development Plan
+------------------------
+
+### 3.1 ICO Plan
+#### 3.1.1 Issuing Amount of CTG Coin
+* The issuing amount of CTG Coin is 10 billion.
+* 10.5% of CTG Coin is for the global public issue.
+* 11% of CTG Coin is for node reward
+* 15.5% of CTG Coin is for our partners with conditional possession and the term is 3 years.
+* 25% of CTG Coin is for the security fund of CTG eco-system with independent management.
+* 10% of CTG Coin is for the fund of community construction, which is used to reward the team that has an outstanding contribution.
+* 28% of CTG Coin is possessed by CTG management team, which is released at the ratio of no more than 5% every year to increase the market liquidity. The released funds are used for node maintenance, community promotion and sustainable construction of system. The precondition of the release is the growth of effective users of the year is over 30% of that of the previous year.
+
+#### 3.1.2 Use of Global Public Funds of CTG Project
+* 10% is for promotion and propaganda of CTG Coin and CTG system.
+* 30% is for management and maintenance after CTG Coin is listed and circulated.
+* 25% is for the construction of CTG eco-platform.
+* 20% is for the construction of CTG’s public blockchain nodes.
+* 10% is for establishment and maintenance of communities.
+* 5% is for international communication.
+
+### 3.2 Community Construction
+Under the leadership of CTG team, most of tokens will be used for community construction. We will pay attention to communities at home and abroad as well as better embrace them. Good community cultures can not only help CTG but also prevent and solve more potential risks in advance.
+
+### 3.3 Application and Innovation of Payment
+As the most promising ecological system based on blockchain technology, CTG has perfectly combined the advantages of BTC and ETH as well as solved the inherent defects of the blockchain system. By means of constant construction of the basic platform, development of products, and development and iteration of commercial landing projects, CTG will gradually form the blockchain economy, improve the industry efficiency and promote the efficient and effective development of society.
+As the payment token of the center, CTG will take advantage of its own features as well as make further development of applications in the following various scenarios and play a positive role.
+
+#### 3.3.1 Travel Payment
+The biggest problem of transnational travel is currency exchange. At present, BTC, ETH and other virtual currencies of blockchain are not suitable for real-time payment with small amount due to their long-time confirmation and complicated procedure.
+Because of the latest consensus algorithm as well as the brand-new blockchain architecture, the theoretical value of payment confirmation time of CTG is within 1 second, which can completely be applied in all kind of landing payment scenarios.
+In addition, thanks to the inherent features of virtual currencies of blockchain, CTG can exempt the troubles of currency exchange and exchange rate fluctuation.
+Another highlight of CTG is the tailor-made development for mobile and wearable devices, which will make it more convenient for users and merchants to proceed business of receipt and payment as well as enjoy the benefits from CTG.
+
+#### 3.3.2 Payment Security
+Payment security is the top priority for the system development of CTG. Based on the encryption algorithm and the decentralized deployment mechanism applied by CTG, various security issues will be taken into consideration.
+
+#### 3.3.3 Support of Mobile and Wearable Devices
+In order to facilitate individual users and adapt to the requirement of scientific development, CTG will support all kinds of mobile and wearable devices. The user experience of this part is the key point of CTG.
+Compared with various domestic mobile payment applications, such as Alipay, WeChat and UnionPay, CTG will make more investment on convenience, security and user experience.
+With the support of this aspect, we believe the prospect of CTG will be more promising.
+ 
+4.Consensus Algorithm (BFT-DPOS)
+------------------------------------
+CTG utilizes the only known decentralized consensus algorithm proven capable of meeting the performance requirements of applications on the blockchain, which is Delegated Proof of Stake (DPOS). Under this algorithm, those who hold tokens on the blockchain of CTG may select block producers through a continuous approval voting system. Anyone may choose to participate in block production and will be given an opportunity to produce blocks, provided they can persuade token holders to vote for them.
+CTG enables blocks to be produced exactly every 0.5 second and exactly one producer is authorized to produce a block at any given point in time. If the block is not produced at the scheduled time, the block for that time slot is skipped. When one or more blocks are skipped, there is a gap which is no less than 0.5 second in the blockchain.
+Using CTG system, blocks are produced in rounds of 126 (6 blocks each, times 21 producers). At the start of each round, 21 unique block producers are chosen by preference of votes cast by token holders. The selected producers are scheduled in an order agreed upon by 15 or more producers. 
+
+If a producer misses a block and has not produced any block within the last 24 hours, they will be removed from consideration until they notify the blockchain of their intention to start producing blocks again. This ensures the network operates smoothly by minimizing the number of blocks missed by excluding unreliable producers.
+
+In theory, a DPOS blockchain does not experience any forks because, rather than compete, the block producers cooperate to produce blocks. In the event there is a fork, consensus will automatically switch to the longest chain. This method works because the rate at which blocks are added to a blockchain fork is directly correlated to the percentage of block producers that share the same consensus. In other words, a blockchain fork with more producers on it will grow in length faster than one with fewer producers, because the fork with more producers will experience fewer missed blocks.
+
+Furthermore, no block producer should be producing blocks on two forks at the same time. A block producer caught doing this will likely be voted out. Cryptographic evidence of such double-production may also be used to automatically remove abusers.
+Byzantine Fault Tolerance is added to traditional DPOS by allowing all producers to sign all blocks so long as no producer signs two blocks with the same timestamp or the same block height. Once 15 producers have signed a block, the block is deemed irreversible. Any Byzantine producer would have to generate cryptographic evidence of their treason by signing two blocks with the same timestamp or block height. Under this model, an irreversible consensus should be reachable within 1 second.
+
+### 4.1 Transaction Confirmation
+The standard DPOS blockchain has 100% block producer participation. A transaction can be considered confirmed with 99.9% certainty after an average of 0.25 seconds from time of broadcast.
+In addition to DPOS, CTG system adds asynchronous Byzantine Fault Tolerance (aBFT) for faster achievement of irreversibility. The aBFT algorithm provides 100% confirmation of irreversibility within 1 second.
+
+### 4.2Transaction as Proof of Stake (TaPoS)
+CTG system requires every transaction to include part of the hash of a recent block header. This hash serves two purposes:
+1.	Prevent a replay of a transaction on forks; 
+2.	Signal the system that a particular user is on a specific fork.
+As time goes by, all users end up directly confirming the blockchain, which makes it difficult to forge counterfeit chains. As a result, the counterfeit would not be able to transfer transactions from the legitimate chain.
+
+
 https://ctg-pay.oss-ap-southeast-1.aliyuncs.com/file/ctg_technical_whitepaper_cn.pdf
