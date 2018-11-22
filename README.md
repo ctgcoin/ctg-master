@@ -142,9 +142,9 @@ Payment security is the top priority for the system development of CTG. Based on
 In order to facilitate individual users and adapt to the requirement of scientific development, CTG will support all kinds of mobile and wearable devices. The user experience of this part is the key point of CTG.
 Compared with various domestic mobile payment applications, such as Alipay, WeChat and UnionPay, CTG will make more investment on convenience, security and user experience.
 With the support of this aspect, we believe the prospect of CTG will be more promising.
- 
+
 4.Consensus Algorithm (BFT-DPOS)
-------------------------------------
+------------------------------
 CTG utilizes the only known decentralized consensus algorithm proven capable of meeting the performance requirements of applications on the blockchain, which is Delegated Proof of Stake (DPOS). Under this algorithm, those who hold tokens on the blockchain of CTG may select block producers through a continuous approval voting system. Anyone may choose to participate in block production and will be given an opportunity to produce blocks, provided they can persuade token holders to vote for them.
 CTG enables blocks to be produced exactly every 0.5 second and exactly one producer is authorized to produce a block at any given point in time. If the block is not produced at the scheduled time, the block for that time slot is skipped. When one or more blocks are skipped, there is a gap which is no less than 0.5 second in the blockchain.
 Using CTG system, blocks are produced in rounds of 126 (6 blocks each, times 21 producers). At the start of each round, 21 unique block producers are chosen by preference of votes cast by token holders. The selected producers are scheduled in an order agreed upon by 15 or more producers. 
